@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="C语言,TCP,聊天室," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="了解了C语言多线程的实例和简单的TCP通信，来编写一个简单的聊天室曾经java实现的聊天室程序在这里">
+<meta name="keywords" content="C语言,TCP,聊天室">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VC6聊天室程序设计">
+<meta property="og:url" content="http://zfblog.xyz/2017/09/11/VC6聊天室程序设计/index.html">
+<meta property="og:site_name" content="冬约❤夏至">
+<meta property="og:description" content="了解了C语言多线程的实例和简单的TCP通信，来编写一个简单的聊天室曾经java实现的聊天室程序在这里">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-16T13:33:11.099Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VC6聊天室程序设计">
+<meta name="twitter:description" content="了解了C语言多线程的实例和简单的TCP通信，来编写一个简单的聊天室曾经java实现的聊天室程序在这里">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zfblog.xyz/2017/09/11/VC6聊天室程序设计/"/>
+
+
+
+
+
+  <title>VC6聊天室程序设计 | 冬约❤夏至</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">冬约❤夏至</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Frey's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zfblog.xyz/2017/09/11/VC6聊天室程序设计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="昔日风">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冬约❤夏至">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">VC6聊天室程序设计</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-11T15:39:40+08:00">
+                2017-09-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">C/C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>了解了C语言<a href="/2017/08/10/JAVA套接字之TCP实现聊天室/">多线程的实例</a>和简单的TCP通信，来编写一个简单的聊天室<br>曾经java实现的聊天室程序<a href="/2017/09/05/C实现简单TCP通信/">在这里</a><br><a id="more"></a><br><span style="color: #3366ff;">客户端程序</span><br>客户端需要两个线程，主线程接受用户输入并发送到服务器<br>另一个线程监听服务器发来的消息，显示在屏幕上<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"winsock2.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdio.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SERVER_IP	<span class="meta-string">"10.80.167.248"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SERVER_PORP	8884</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//blog:zfblog.xyz</span></span><br><span class="line"><span class="comment">//author:Frey</span></span><br><span class="line"></span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">ThreadFun</span><span class="params">(LPVOID pM)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	SOCKET sockClient=*(SOCKET *)pM;</span><br><span class="line">	<span class="keyword">char</span> recvInfo[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(recv(sockClient,recvInfo,<span class="number">100</span>,<span class="number">0</span>)&gt;<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%s"</span>,recvInfo);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//加载套接字库</span></span><br><span class="line">	WORD wVersionRequested;</span><br><span class="line">	WSADATA wsaData;</span><br><span class="line">	<span class="keyword">int</span> err;</span><br><span class="line">	wVersionRequested = MAKEWORD( <span class="number">1</span>, <span class="number">1</span> ); <span class="comment">//版本好为1.1</span></span><br><span class="line">	err = WSAStartup( wVersionRequested, &amp;wsaData );</span><br><span class="line">	<span class="keyword">if</span> ( err != <span class="number">0</span> ) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> ( LOBYTE( wsaData.wVersion ) != <span class="number">1</span> ||</span><br><span class="line">	HIBYTE( wsaData.wVersion ) != <span class="number">1</span> ) &#123;</span><br><span class="line">		WSACleanup( );</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	SOCKET sockClient=socket(AF_INET,SOCK_STREAM,<span class="number">0</span>); <span class="comment">//SOCK_STREAM参数设置为TCP连接</span></span><br><span class="line">	SOCKADDR_IN addrServer; <span class="comment">//服务器地址结构</span></span><br><span class="line">	addrServer.sin_addr.S_un.S_addr=inet_addr(SERVER_IP); <span class="comment">//服务器地址</span></span><br><span class="line">	addrServer.sin_port=htons(SERVER_PORP); <span class="comment">//服务器端口号</span></span><br><span class="line">	addrServer.sin_family=AF_INET;</span><br><span class="line">	<span class="comment">//与服务器端建立连接，进行通信</span></span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">100</span>];</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"请输入姓名:"</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>,name);</span><br><span class="line">	<span class="keyword">int</span> connReult=connect(sockClient,(SOCKADDR*)&amp;addrServer,<span class="keyword">sizeof</span>(SOCKADDR));</span><br><span class="line">	<span class="keyword">if</span>(connReult!=WSAEADDRNOTAVAIL) <span class="comment">//访问成功</span></span><br><span class="line">	&#123;</span><br><span class="line">		CreateThread(<span class="literal">NULL</span>, <span class="number">0</span>, ThreadFun, (<span class="keyword">void</span> *)&amp;sockClient, <span class="number">0</span>, <span class="literal">NULL</span>);	</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"连接成功\n"</span>);</span><br><span class="line">		<span class="comment">//成功建立连接后向服务器端发送数据，结果将显示在服务器端上</span></span><br><span class="line">		<span class="keyword">char</span> sendInfo[<span class="number">100</span>];</span><br><span class="line">		<span class="built_in">sprintf</span>(sendInfo,name);</span><br><span class="line">		send(sockClient,sendInfo,<span class="built_in">strlen</span>(sendInfo)+<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">		<span class="comment">//接收来自服务器端发送来的信息</span></span><br><span class="line">		<span class="comment">//char recvInfo[100];</span></span><br><span class="line">		<span class="comment">//recv(sockClient,recvInfo,100,0);</span></span><br><span class="line">		<span class="comment">//printf("%s\n",recvInfo);</span></span><br><span class="line">		<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%s"</span>,sendInfo);</span><br><span class="line">			send(sockClient,sendInfo,<span class="built_in">strlen</span>(sendInfo)+<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> errCode=WSAGetLastError();</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"the errcode is:%d\n"</span>,errCode);</span><br><span class="line">	&#125;</span><br><span class="line">	closesocket(sockClient);</span><br><span class="line">	WSACleanup();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><span style="color: #3366ff;">服务器程序</span><br>用一个链表来存储用户的套接字和姓名<br>主线程监听用户的连接，每当有新用户连接，将其信息加入链表，并传入第二个线程<br>第二个线程接受客户端发来的信息，并将信息传入第三个线程<br>第三个线程从链表中读取用户套接字，将接到的信息转发给所有在线用户<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"winsock2.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdio.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//blog:zfblog.xyz</span></span><br><span class="line"><span class="comment">//author:Frey</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SERVER_PORP	8884</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">client_info</span>&#123;</span></span><br><span class="line">	SOCKET sockConn;</span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">100</span>];</span><br><span class="line">	client_info *next;</span><br><span class="line">&#125;;<span class="comment">//存放每一个用户的信息</span></span><br><span class="line"></span><br><span class="line">client_info * C_info_head;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">Threadmes</span><span class="params">(LPVOID pM)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> sendInfo[<span class="number">100</span>];</span><br><span class="line">	<span class="built_in">sprintf</span>(sendInfo,(<span class="keyword">char</span> *)pM);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=c_info_num;i++)&#123;</span><br><span class="line">		SOCKET sockConn=C_info[i].sockConn;</span><br><span class="line">		<span class="comment">//if(C_info[i].num!=-1)&#123;</span></span><br><span class="line">		send(sockConn,sendInfo,<span class="built_in">strlen</span>(sendInfo)+<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">		<span class="comment">//&#125;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将某条消息群发给所有客户端</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendmessage</span><span class="params">(<span class="keyword">char</span> *message)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	CreateThread(<span class="literal">NULL</span>, <span class="number">0</span>, Threadmes, (<span class="keyword">void</span> *)message, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//接收每个用户的信息</span></span><br><span class="line"><span class="function">DWORD WINAPI <span class="title">ThreadFun</span><span class="params">(LPVOID pM)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	client_info c_info = *(client_info *)pM;</span><br><span class="line">	SOCKET sockConn=c_info.sockConn;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> sendInfo[<span class="number">100</span>];</span><br><span class="line">	<span class="comment">//inet_ntoa将结构转换为十进制的IP地址字符串</span></span><br><span class="line">	<span class="comment">//sprintf(sendInfo,"welcome %s to this Server!",inet_ntoa(addrClient.sin_addr));</span></span><br><span class="line">	<span class="comment">//成功建立连接后向客户端发送数据，结果将显示在客户端上</span></span><br><span class="line">	<span class="comment">//send(sockConn,sendInfo,strlen(sendInfo)+1,0);</span></span><br><span class="line">	<span class="comment">//从客户端接收数据，结果显示在服务器上</span></span><br><span class="line">	<span class="keyword">char</span> recvInfo[<span class="number">100</span>];</span><br><span class="line">	recv(sockConn,recvInfo,<span class="number">100</span>,<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">sprintf</span>(c_info.name,recvInfo);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"欢迎%s进入聊天室\n"</span>,recvInfo);</span><br><span class="line">	<span class="built_in">sprintf</span>(sendInfo,<span class="string">"欢迎%s进入聊天室\n"</span>,recvInfo);</span><br><span class="line">	sendmessage(sendInfo);</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;	</span><br><span class="line">		<span class="keyword">if</span>(recv(sockConn,recvInfo,<span class="number">100</span>,<span class="number">0</span>)&lt;<span class="number">0</span>)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"[%s]:%s\n"</span>,c_info.name,recvInfo);</span><br><span class="line">		<span class="built_in">sprintf</span>(sendInfo,<span class="string">"[%s]:%s\n"</span>,c_info.name,recvInfo);</span><br><span class="line">		sendmessage(sendInfo);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//将本次建立连接中得到套接字关闭</span></span><br><span class="line">	closesocket(sockConn);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//加载套接字（winsock）库，加载这段代码拷贝于MSDN中WSAStartup的介绍</span></span><br><span class="line">	WORD wVersionRequested;</span><br><span class="line">	WSADATA wsaData;</span><br><span class="line">	<span class="keyword">int</span> err;</span><br><span class="line">	wVersionRequested = MAKEWORD( <span class="number">1</span>, <span class="number">1</span> ); <span class="comment">//版本号为1.1</span></span><br><span class="line">	err = WSAStartup( wVersionRequested, &amp;wsaData );</span><br><span class="line">	<span class="keyword">if</span> ( err != <span class="number">0</span> ) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> ( LOBYTE( wsaData.wVersion ) != <span class="number">1</span> ||</span><br><span class="line">	HIBYTE( wsaData.wVersion ) != <span class="number">1</span> ) &#123;</span><br><span class="line">		WSACleanup( );</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//消息存储及发送</span></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="comment">//----------------------------------------------------</span></span><br><span class="line">	<span class="comment">//创建套接字</span></span><br><span class="line">	SOCKET sockServer=socket(AF_INET,SOCK_STREAM,<span class="number">0</span>); <span class="comment">//SOCK_STREAM参数设置为TCP连接</span></span><br><span class="line">	SOCKADDR_IN addrServer; <span class="comment">//设置服务器端套接字的相关属性</span></span><br><span class="line">	addrServer.sin_addr.S_un.S_addr=htonl(INADDR_ANY); <span class="comment">//设置IP</span></span><br><span class="line">	addrServer.sin_family=AF_INET;</span><br><span class="line">	addrServer.sin_port=htons(SERVER_PORP); <span class="comment">//设置端口号</span></span><br><span class="line">	<span class="comment">//将套接字绑定到本地地址和指定端口上</span></span><br><span class="line">	bind(sockServer,(SOCKADDR*)&amp;addrServer,<span class="keyword">sizeof</span>(SOCKADDR));</span><br><span class="line">	<span class="comment">//将套接字设置为监听模式，并将最大请求连接数设置成5，超过此数的请求全部作废</span></span><br><span class="line">	listen(sockServer,<span class="number">5</span>);</span><br><span class="line">	SOCKADDR_IN addrClient; <span class="comment">//用来接收客户端的设置，包括IP和端口</span></span><br><span class="line">	<span class="keyword">int</span> len=<span class="keyword">sizeof</span>(SOCKADDR);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>) <span class="comment">//不断监听</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//得到创建连接后的一个新的套接字，用来和客户端进行沟通，原套接字继续监听客户的连接请求</span></span><br><span class="line">		SOCKET sockConn=accept(sockServer,(SOCKADDR*)&amp;addrClient,&amp;len);</span><br><span class="line">		<span class="keyword">if</span>(sockConn!=INVALID_SOCKET) <span class="comment">//创建成功</span></span><br><span class="line">		&#123;	</span><br><span class="line">			c_info_num++;</span><br><span class="line">			C_info[c_info_num].num=c_info_num;</span><br><span class="line">			C_info[c_info_num].sockConn=sockConn;</span><br><span class="line">			CreateThread(<span class="literal">NULL</span>, <span class="number">0</span>, ThreadFun, (<span class="keyword">void</span> *)&amp;C_info[c_info_num], <span class="number">0</span>, <span class="literal">NULL</span>);	</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> errCode=WSAGetLastError();</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"the errcode is:%d\n"</span>,errCode);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//如果本程序不是死循环，那么在此处还应添加以下代码：</span></span><br><span class="line">	closesocket(sockServer); <span class="comment">//对一直处于监听状态的套接字进行关闭</span></span><br><span class="line">	WSACleanup(); <span class="comment">//终止对winsocket库的使用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><span style="color: #ff0000;">未完成的问题</span><br>用户离线时出现问题</p>
+<p>全部代码:<a href="https://github.com/summerIwinter/C_TCP_-" target="_blank" rel="noopener">https://github.com/summerIwinter</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C语言/" rel="tag"># C语言</a>
+          
+            <a href="/tags/TCP/" rel="tag"># TCP</a>
+          
+            <a href="/tags/聊天室/" rel="tag"># 聊天室</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/05/C实现简单TCP通信/" rel="next" title="C实现简单TCP通信">
+                <i class="fa fa-chevron-left"></i> C实现简单TCP通信
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/12/CentOS自带python2-6升级到2-7/" rel="prev" title="CentOS自带python2.6升级到2.7">
+                CentOS自带python2.6升级到2.7 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">昔日风</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">昔日风</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

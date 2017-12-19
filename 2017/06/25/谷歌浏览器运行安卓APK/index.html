@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="安卓模拟器," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="使用谷歌浏览器的插件ARChon实现安卓APK在电脑上运行一些简单的应用可以实现，游戏等可能实现不了">
+<meta name="keywords" content="安卓模拟器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谷歌浏览器运行安卓APK">
+<meta property="og:url" content="http://zfblog.xyz/2017/06/25/谷歌浏览器运行安卓APK/index.html">
+<meta property="og:site_name" content="冬约❤夏至">
+<meta property="og:description" content="使用谷歌浏览器的插件ARChon实现安卓APK在电脑上运行一些简单的应用可以实现，游戏等可能实现不了">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2950376-a275f201f7fdead8.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2950376-2372cf692c93b5a9.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2950376-0c0702ed3e06b504.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2950376-c5a40ac2756b5a87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2950376-f4ed0ddb2b2d06e1.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2950376-ed37c301d49d7485.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-13T05:22:14.256Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谷歌浏览器运行安卓APK">
+<meta name="twitter:description" content="使用谷歌浏览器的插件ARChon实现安卓APK在电脑上运行一些简单的应用可以实现，游戏等可能实现不了">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2950376-a275f201f7fdead8.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zfblog.xyz/2017/06/25/谷歌浏览器运行安卓APK/"/>
+
+
+
+
+
+  <title>谷歌浏览器运行安卓APK | 冬约❤夏至</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">冬约❤夏至</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Frey's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zfblog.xyz/2017/06/25/谷歌浏览器运行安卓APK/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="昔日风">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冬约❤夏至">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">谷歌浏览器运行安卓APK</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-25T16:48:59+08:00">
+                2017-06-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/软件使用/" itemprop="url" rel="index">
+                    <span itemprop="name">软件使用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>使用谷歌浏览器的插件ARChon实现安卓APK在电脑上运行<br>一些简单的应用可以实现，游戏等可能实现不了<br><a id="more"></a><br>用谷歌插件在电脑上运行安卓APK</p>
+<p>1，直接谷歌应用商店下载出现错误<br>程序包无效：“CRX_SIGNATURE_VERIFICATION_FAILED”。</p>
+<p>2，直接下载crx包参考<a href="http://jingyan.baidu.com/article/6079ad0e8bf19428ff86dbe5.html" target="_blank" rel="noopener">百度经验</a><br>3，出现错误：Cannot load extension with file or directory name <em>metadata. Filenames starting with “</em>“ are reserved for use by the system.<br>更改解压后文件夹_metadata为metadata<br>4，出现错误：’import’ extension is not installed.<br>打开文件manifest.json去掉import一句</p>
+<pre><code>&lt;span class=&quot;hljs-string&quot;&gt;&quot;import&quot;&lt;/span&gt;: [ {
+      &lt;span class=&quot;hljs-string&quot;&gt;&quot;id&quot;&lt;/span&gt;: &lt;span class=&quot;hljs-string&quot;&gt;&quot;mfaihdlpglflfgpfjcifdjdjcckigekc&quot;&lt;/span&gt;
+   } ],
+</code></pre><p>继续谷歌去掉这句话不对<br>看这篇<a href="http://blog.csdn.net/tangxl2008008/article/details/53759133" target="_blank" rel="noopener">CSDN</a>文章<br>说要下载插件<a href="http://archon-runtime.github.io/" target="_blank" rel="noopener">ARChon</a></p>
+<p>(以下废话，直接看5）<br>4.1，安装成功，但启用后一直白屏</p>
+<div class="image-package"><br><br><img src="http://upload-images.jianshu.io/upload_images/2950376-a275f201f7fdead8.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><div class="image-caption"></div><br></div><br>怀疑是不是去掉import一句出问题了<br>4.2，网上看到开启Native Client<br>谷歌浏览器地址栏输入chrome://flags/开启Native Client<br>无用<br>4.3，发现另一个谷歌商店的应用twerk<br>这个应用是把 APK 文件转换成 Chrome App用的<br><div class="image-package"><br><br><img src="http://upload-images.jianshu.io/upload_images/2950376-2372cf692c93b5a9.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><div class="image-caption"></div><br></div><br>5<a href="http://archon-runtime.github.io/" target="_blank" rel="noopener">ARChon</a>是谷歌插件要在扩展程序，打钩开发者模式，点击加载已解压扩展程序，选择解压文件夹<br>加载ARChon时有警告，可忽略<br>先加载ARC Welder出现4的错误后<br>再加载ARChon，然后ARC Welder就好了，不好的话重新加载就好了<br>安装好了就是APK运行不了<br><br>4.3安装的twerk可以把 APK 文件转换一个文件夹<br>然后ARC Welder运行<br><br>谷歌浏览器如何运行APK博客<a href="http://blog.csdn.net/tangxl2008008/article/details/53759133" target="_blank" rel="noopener">CSDN</a>可以试一试<br><br># 又遇到的问题<br><br>Chrome加载Android应用，提示“There is no “message” element for key extName”错误，如：<br><div class="image-package"><br><br><img src="http://upload-images.jianshu.io/upload_images/2950376-0c0702ed3e06b504.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><div class="image-caption"></div><br></div><br><strong>解决方法：</strong><br>找到该Crx文件夹下的“_locales\en”目录下的“messages.json”文件，在“extName”节点下，添加“message”字段标签，值对应应用的包名：<br><div class="image-package"><br><br><img src="http://upload-images.jianshu.io/upload_images/2950376-c5a40ac2756b5a87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><div class="image-caption">1</div><br></div><br>WebGL 不受支持<br><a href="https://www.zhihu.com/question/19647275" target="_blank" rel="noopener">知乎</a>有教程<br>浏览器快捷方式属性增加–ignore-gpu-blacklist<br>开启硬件加速<br><br>试了一下掌阅<br><div class="image-package"><br><br><img src="http://upload-images.jianshu.io/upload_images/2950376-f4ed0ddb2b2d06e1.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><div class="image-caption">掌阅.PNG</div><br></div><br>试了一下简书<br>可以运行<br><div class="image-package"><br><br><img src="http://upload-images.jianshu.io/upload_images/2950376-ed37c301d49d7485.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><div class="image-caption"></div><br></div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/安卓模拟器/" rel="tag"># 安卓模拟器</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/22/批处理for循环使用/" rel="next" title="批处理for循环使用">
+                <i class="fa fa-chevron-left"></i> 批处理for循环使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/02/JAVA实现MD5加密/" rel="prev" title="JAVA实现MD5加密">
+                JAVA实现MD5加密 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">昔日风</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">昔日风</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

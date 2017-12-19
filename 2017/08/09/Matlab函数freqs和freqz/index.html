@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Matlab,freqs," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1,freqs模拟滤波器的频率响应语法：1234h = freqs(b,a,w)[h,w] = freqs(b,a)[h,w] = freqs(b,a,f)freqs(b,a)">
+<meta name="keywords" content="Matlab,freqs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matlab函数freqs和freqz">
+<meta property="og:url" content="http://zfblog.xyz/2017/08/09/Matlab函数freqs和freqz/index.html">
+<meta property="og:site_name" content="冬约❤夏至">
+<meta property="og:description" content="1,freqs模拟滤波器的频率响应语法：1234h = freqs(b,a,w)[h,w] = freqs(b,a)[h,w] = freqs(b,a,f)freqs(b,a)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2950376-85144d2722aced1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2950376-0d9fbd415b399e80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2950376-b264b55b452e2e05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2950376-d8b126cc6cad47b0.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2950376-6cf701c431d25ecf.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2950376-2b3df07daa4591a4.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-16T13:32:47.843Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Matlab函数freqs和freqz">
+<meta name="twitter:description" content="1,freqs模拟滤波器的频率响应语法：1234h = freqs(b,a,w)[h,w] = freqs(b,a)[h,w] = freqs(b,a,f)freqs(b,a)">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2950376-85144d2722aced1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zfblog.xyz/2017/08/09/Matlab函数freqs和freqz/"/>
+
+
+
+
+
+  <title>Matlab函数freqs和freqz | 冬约❤夏至</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">冬约❤夏至</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Frey's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zfblog.xyz/2017/08/09/Matlab函数freqs和freqz/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="昔日风">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冬约❤夏至">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Matlab函数freqs和freqz</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-09T12:52:56+08:00">
+                2017-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Matlab/" itemprop="url" rel="index">
+                    <span itemprop="name">Matlab</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>1,freqs</strong><br>模拟滤波器的频率响应<br><em>语法：</em><br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">h = freqs(b,a,w)</span><br><span class="line">[h,w] = freqs(b,a)</span><br><span class="line">[h,w] = freqs(b,a,f)</span><br><span class="line">freqs(b,a)</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p><strong>描述：</strong><br>freqs 返回一个模拟滤波器的H(jw)的复频域响应（拉普拉斯格式）</p>
+<p><div class="image-package"><img src="http://upload-images.jianshu.io/upload_images/2950376-85144d2722aced1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></div><br>h = freqs(b, a, w) 根据系数向量计算返回模拟滤波器的复频域响应<br>freqs 计算在复平面虚轴上的频率响应h，角频率w确定了输入的实向量，因此必须包含至少一个频率点。<br>[h, w] = freqs(b, a) 自动挑选200个频率点来计算频率响应h<br>[h, w] = freqs(b, a, f) 挑选f个频率点来计算频率响应h<br><strong>例子：</strong><br>找到并画出下面传递函数的频率响应</p>
+<p><div class="image-package"><img src="http://upload-images.jianshu.io/upload_images/2950376-0d9fbd415b399e80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></div><br>Matlab代码：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span> <span class="number">0.4</span> <span class="number">1</span>];</span><br><span class="line">b = [<span class="number">0.2</span> <span class="number">0.3</span> <span class="number">1</span>];</span><br><span class="line">w = <span class="built_in">logspace</span>(<span class="number">-1</span>, <span class="number">1</span>);</span><br><span class="line">freqs(b, a, w);</span><br></pre></td></tr></table></figure></p>
+<p><strong>logspace 功能：</strong>生成从10的a次方到10的b次方之间按对数等分的n个元素的行向量<br>n如果省略，则默认值为50。<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">h=freqs(b,a,w);</span><br><span class="line">mag = <span class="built_in">abs</span>(h);phase = <span class="built_in">angle</span>(h);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>), loglog(w,mag);</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>), semilogx(w,phase);</span><br><span class="line">f = w/(<span class="number">2</span>*<span class="built_in">pi</span>);mag = <span class="number">20</span>*<span class="built_in">log10</span>(mag);phase = phase*<span class="number">180</span>/<span class="built_in">pi</span>;</span><br></pre></td></tr></table></figure></p>
+<p><div class="image-package"><img src="http://upload-images.jianshu.io/upload_images/2950376-b264b55b452e2e05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></div><br><strong>2,freqz</strong><br>MATLAB提供了专门用于求离散系统频响特性的函数freqz()<br>调用freqz()的格式有以下两种：<br><em>(1):[H,w]=freqz(B,A,N)</em></p>
+<p><div class="image-package"><img src="http://upload-images.jianshu.io/upload_images/2950376-d8b126cc6cad47b0.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></div><br>B和A分别为离散系统的系统函数分子、分母多项式的系数向量，N为正整数，返回量H则包含了离散系统频响 在 0——pi范围内N个频率等分点的值，向量w则包含 范围内N个频率等分点。调用中若N默认，默认值为512。<br><em>(2):[H,w]=freqz(B,A,N,’whole’)</em><br>该调用格式将计算离散系统在0—pi范内的N个频率等分店的频率响应的值。因此，可以先调用freqz()函数计算系统的频率响应，然后利用abs()和angle()函数及plot()函数，即可绘制出系统在 或 范围内的频响曲线。<br><strong>例：绘制如下系统的频响曲线</strong><br>H(z)=(z-0.5)/z<br>MATLAB命令如下：<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">B=[<span class="number">1</span> <span class="number">-0.5</span>];</span><br><span class="line">A =[<span class="number">1</span> <span class="number">0</span>];</span><br><span class="line">[H,w]=freqz(B,A,<span class="number">400</span>,<span class="string">'whole'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>H是频率响应的幅度，w是0–pi内的400个点<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Hf=<span class="built_in">abs</span>(H);</span><br><span class="line">Hx=<span class="built_in">angle</span>(H);</span><br><span class="line">clf</span><br><span class="line">figure(<span class="number">1</span>)</span><br><span class="line">plot(w,Hf)</span><br><span class="line">title(<span class="string">'离散系统幅频特性曲线'</span>)</span><br><span class="line">figure(<span class="number">2</span>)</span><br><span class="line">plot(w,Hx)</span><br><span class="line">title(<span class="string">'离散系统相频特性曲线'</span>)</span><br></pre></td></tr></table></figure></p>
+<p><div class="image-package"><br><img src="http://upload-images.jianshu.io/upload_images/2950376-6cf701c431d25ecf.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></div></p>
+<p><div class="image-caption" style="text-align: center;">幅频特性.PNG</div><br></p>
+<p><div class="image-package"><br><img src="http://upload-images.jianshu.io/upload_images/2950376-2b3df07daa4591a4.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></div></p>
+<p><div class="image-caption" style="text-align: center;">相频特性.PNG</div><br>这样画出来的是线性的，要想获得db格式的幅度，需要转换 20*log10（Hf）<br>之后再画就是db格式的<br>也可以直接用freqz(b,a,w)这样就会画出幅频响应和相频响应，幅频响应直接是db格式的幅度。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Matlab/" rel="tag"># Matlab</a>
+          
+            <a href="/tags/freqs/" rel="tag"># freqs</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/09/PyQt5/" rel="next" title="PyQt5">
+                <i class="fa fa-chevron-left"></i> PyQt5
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/09/自己写一个Android照相机应用-1/" rel="prev" title="自己写一个Android照相机应用-1">
+                自己写一个Android照相机应用-1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">昔日风</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">昔日风</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
