@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/08/03/Python2%E4%B8%8EPython3%E5%85%B1%E5%AD%98/</loc>
+    <lastmod>2017-12-18T14:22:21.786Z</lastmod>
+    <data>
+        <display>
+        <title>Python2与Python3共存</title>
+        <pubTime>2017-08-03T14:42:51.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://zfblog.xyz/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/09/12/CentOS%E8%87%AA%E5%B8%A6python2-6%E5%8D%87%E7%BA%A7%E5%88%B02-7/</loc>
+    <lastmod>2017-12-17T12:53:28.807Z</lastmod>
+    <data>
+        <display>
+        <title>CentOS自带python2.6升级到2.7</title>
+        <pubTime>2017-09-12T12:27:28.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>centos</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="http://zfblog.xyz/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/08/09/PyQt5/</loc>
+    <lastmod>2017-12-17T12:27:20.482Z</lastmod>
+    <data>
+        <display>
+        <title>PyQt5</title>
+        <pubTime>2017-08-09T04:42:50.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>PyQt5</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://zfblog.xyz/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/09/05/C%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95TCP%E9%80%9A%E4%BF%A1/</loc>
+    <lastmod>2017-12-16T13:33:48.124Z</lastmod>
+    <data>
+        <display>
+        <title>C实现简单TCP通信</title>
+        <pubTime>2017-09-05T15:04:42.000Z</pubTime>
+        
+        <tag>C语言</tag>
+         
+        <tag>TCP</tag>
+         
+        <tag>套接字</tag>
+         
+         
+           
+             
+              <breadCrumb title="C/C++" url="http://zfblog.xyz/categories/C-C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/09/04/C%E8%AF%AD%E8%A8%80%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2017-12-16T13:33:39.642Z</lastmod>
+    <data>
+        <display>
+        <title>C语言多线程学习(VC6++环境)</title>
+        <pubTime>2017-09-04T15:26:29.000Z</pubTime>
+        
+        <tag>C语言</tag>
+         
+        <tag>多线程</tag>
+         
+         
+           
+             
+              <breadCrumb title="C/C++" url="http://zfblog.xyz/categories/C-C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/09/11/VC6%E8%81%8A%E5%A4%A9%E5%AE%A4%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2017-12-16T13:33:11.099Z</lastmod>
+    <data>
+        <display>
+        <title>VC6聊天室程序设计</title>
+        <pubTime>2017-09-11T07:39:40.000Z</pubTime>
+        
+        <tag>C语言</tag>
+         
+        <tag>TCP</tag>
+         
+        <tag>聊天室</tag>
+         
+         
+           
+             
+              <breadCrumb title="C/C++" url="http://zfblog.xyz/categories/C-C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/09/01/powershell%E8%84%9A%E6%9C%AC%E9%81%8D%E5%8E%86%E7%9B%AE%E5%BD%95/</loc>
+    <lastmod>2017-12-16T13:33:01.204Z</lastmod>
+    <data>
+        <display>
+        <title>powershell脚本遍历目录</title>
+        <pubTime>2017-09-01T14:36:51.000Z</pubTime>
+        
+        <tag>powershell</tag>
+         
+        <tag>windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="Windows" url="http://zfblog.xyz/categories/Windows/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/08/09/Matlab%E5%87%BD%E6%95%B0freqs%E5%92%8Cfreqz/</loc>
+    <lastmod>2017-12-16T13:32:47.843Z</lastmod>
+    <data>
+        <display>
+        <title>Matlab函数freqs和freqz</title>
+        <pubTime>2017-08-09T04:52:56.000Z</pubTime>
+        
+        <tag>Matlab</tag>
+         
+        <tag>freqs</tag>
+         
+         
+           
+             
+              <breadCrumb title="Matlab" url="http://zfblog.xyz/categories/Matlab/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/08/09/JAVA%E5%A5%97%E6%8E%A5%E5%AD%97%E4%B9%8BTCP%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8/</loc>
+    <lastmod>2017-12-16T13:32:27.920Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA套接字之TCP简单实用</title>
+        <pubTime>2017-08-09T13:24:19.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>TCP</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://zfblog.xyz/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/08/09/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AAAndroid%E7%85%A7%E7%9B%B8%E6%9C%BA%E5%BA%94%E7%94%A8-1/</loc>
+    <lastmod>2017-12-16T13:29:30.308Z</lastmod>
+    <data>
+        <display>
+        <title>自己写一个Android照相机应用-1</title>
+        <pubTime>2017-08-09T04:59:30.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>相机</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://zfblog.xyz/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/08/19/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AAAndroid%E7%85%A7%E7%9B%B8%E6%9C%BA%E5%BA%94%E7%94%A8-2/</loc>
+    <lastmod>2017-12-16T13:28:48.541Z</lastmod>
+    <data>
+        <display>
+        <title>自己写一个Android照相机应用-2</title>
+        <pubTime>2017-08-19T05:02:07.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>相机</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://zfblog.xyz/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/07/02/JAVA%E5%AE%9E%E7%8E%B0MD5%E5%8A%A0%E5%AF%86/</loc>
+    <lastmod>2017-12-16T13:28:29.245Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA实现MD5加密</title>
+        <pubTime>2017-07-02T10:07:10.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>MD5</tag>
+         
+        <tag>加密</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://zfblog.xyz/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/09/01/powershell%E5%8D%B8%E8%BD%BD%E8%87%AA%E5%B8%A6%E5%BA%94%E7%94%A8/</loc>
+    <lastmod>2017-12-16T13:27:22.532Z</lastmod>
+    <data>
+        <display>
+        <title>powershell卸载自带应用</title>
+        <pubTime>2017-09-01T14:24:44.000Z</pubTime>
+        
+        <tag>powershell</tag>
+         
+        <tag>windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="Windows" url="http://zfblog.xyz/categories/Windows/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/09/02/windows%E7%B3%BB%E7%BB%9F%E7%9B%98%E7%98%A6%E8%BA%AB/</loc>
+    <lastmod>2017-12-15T14:17:18.040Z</lastmod>
+    <data>
+        <display>
+        <title>windows系统盘瘦身</title>
+        <pubTime>2017-09-02T14:10:01.000Z</pubTime>
+        
+        <tag>windows</tag>
+         
+        <tag>系统</tag>
+         
+         
+           
+             
+              <breadCrumb title="Windows" url="http://zfblog.xyz/categories/Windows/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/08/04/%E6%90%AC%E7%93%A6%E5%B7%A5VPS%E6%90%AD%E5%BB%BAWeb%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2017-12-14T05:36:05.869Z</lastmod>
+    <data>
+        <display>
+        <title>搬瓦工VPS搭建Web服务器</title>
+        <pubTime>2017-08-04T03:40:29.000Z</pubTime>
+        
+        <tag>apache</tag>
+         
+        <tag>php</tag>
+         
+        <tag>mysql</tag>
+         
+        <tag>web</tag>
+         
+        <tag>服务器</tag>
+         
+        <tag>centos</tag>
+         
+        <tag>搬瓦工</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="http://zfblog.xyz/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/08/10/JAVA%E5%A5%97%E6%8E%A5%E5%AD%97%E4%B9%8BTCP%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4/</loc>
+    <lastmod>2017-12-13T05:22:19.458Z</lastmod>
+    <data>
+        <display>
+        <title>JAVA套接字之TCP实现聊天室</title>
+        <pubTime>2017-08-10T05:16:11.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>TCP</tag>
+         
+        <tag>聊天室</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://zfblog.xyz/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/06/25/%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%90%E8%A1%8C%E5%AE%89%E5%8D%93APK/</loc>
+    <lastmod>2017-12-13T05:22:14.256Z</lastmod>
+    <data>
+        <display>
+        <title>谷歌浏览器运行安卓APK</title>
+        <pubTime>2017-06-25T08:48:59.000Z</pubTime>
+        
+        <tag>安卓模拟器</tag>
+         
+         
+           
+             
+              <breadCrumb title="软件使用" url="http://zfblog.xyz/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/04/22/%E6%89%B9%E5%A4%84%E7%90%86for%E5%BE%AA%E7%8E%AF%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2017-12-13T05:22:11.866Z</lastmod>
+    <data>
+        <display>
+        <title>批处理for循环使用</title>
+        <pubTime>2017-04-22T05:08:19.000Z</pubTime>
+        
+        <tag>批处理</tag>
+         
+        <tag>for循环</tag>
+         
+         
+           
+             
+              <breadCrumb title="Windows" url="http://zfblog.xyz/categories/Windows/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/12/12/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/</loc>
+    <lastmod>2017-12-13T05:22:08.973Z</lastmod>
+    <data>
+        <display>
+        <title>C语言文件读写</title>
+        <pubTime>2017-12-12T13:38:33.000Z</pubTime>
+        
+        <tag>C语言</tag>
+         
+        <tag>文件</tag>
+         
+         
+           
+             
+              <breadCrumb title="C/C++" url="http://zfblog.xyz/categories/C-C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zfblog.xyz/2017/12/12/%E5%9B%BE%E7%89%87%E5%A4%B4%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2017-12-13T05:22:05.567Z</lastmod>
+    <data>
+        <display>
+        <title>图片头文件解析</title>
+        <pubTime>2017-12-12T12:55:46.000Z</pubTime>
+        
+        <tag>文件头</tag>
+         
+        <tag>图片</tag>
+         
+         
+           
+             
+              <breadCrumb title="文件" url="http://zfblog.xyz/categories/%E6%96%87%E4%BB%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+</urlset>
