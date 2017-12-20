@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zfblog.xyz/404.html</loc>
+    
+    <lastmod>2017-12-20T05:17:49.841Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zfblog.xyz/2017/08/03/Python2%E4%B8%8EPython3%E5%85%B1%E5%AD%98/</loc>
     
     <lastmod>2017-12-18T14:22:21.786Z</lastmod>
@@ -103,13 +110,6 @@
     <loc>http://zfblog.xyz/2017/08/04/%E6%90%AC%E7%93%A6%E5%B7%A5VPS%E6%90%AD%E5%BB%BAWeb%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     
     <lastmod>2017-12-14T05:36:05.869Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zfblog.xyz//404.html</loc>
-    
-    <lastmod>2017-12-13T13:35:29.305Z</lastmod>
     
   </url>
   
