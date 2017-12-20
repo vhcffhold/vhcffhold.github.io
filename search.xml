@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[图片头文件解析]]></title>
     <url>%2F2017%2F12%2F12%2F%E5%9B%BE%E7%89%87%E5%A4%B4%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%2F</url>
-    <content type="text"><![CDATA[各类图片文件头解析收集PNG文件头格式 PNG图片文件头PNG图像格式文件由一个8字节的PNG文件标识（file signature）域和3个以上的后续数据块（IHDR、IDAT、IEND）组成。 PNG文件包括8字节文件署名（89 50 4E 47 0D 0A 1A 0A，十六进制），用来识别PNG格式。 十六进制 含义 89 用于检测传输系统是否支持8位的字符编码（8 bit data），用以减少将文本文件被错误的识别成PNG文件的机会，反之亦然。 50 4E 47 PNG每个字母对应的ASCII，让用户可以使用文本编辑器查看时，识别出是PNG文件。 0D 0A DOS风格的换行符（CRLF）。用于DOS-Unix数据的换行符转换。 1A 在DOS命令行下，用于阻止文件显示的文件结束符。 0A Unix风格的换行符（LF）。用于Unix-DOS换行符的转换。]]></content>
+    <content type="text"><![CDATA[1.PNG图片文件头PNG图像格式文件由一个8字节的PNG文件标识（file signature）域和3个以上的后续数据块（IHDR、IDAT、IEND）组成。PNG文件包括8字节文件署名（89 50 4E 47 0D 0A 1A 0A，十六进制），用来识别PNG格式。 十六进制 含义 89 用于检测传输系统是否支持8位的字符编码（8 bit data），用以减少将文本文件被错误的识别成PNG文件的机会，反之亦然。 50 4E 47 PNG每个字母对应的ASCII，让用户可以使用文本编辑器查看时，识别出是PNG文件。 0D 0A DOS风格的换行符（CRLF）。用于DOS-Unix数据的换行符转换。 1A 在DOS命令行下，用于阻止文件显示的文件结束符。 0A Unix风格的换行符（LF）。用于Unix-DOS换行符的转换。]]></content>
       <categories>
         <category>文件</category>
       </categories>
