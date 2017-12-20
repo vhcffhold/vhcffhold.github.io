@@ -1592,6 +1592,203 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zfblog.xyz/2017/08/03/搬瓦工安装ss并加速/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Frey">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冬约❤夏至">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/03/搬瓦工安装ss并加速/" itemprop="url">搬瓦工安装ss并加速</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-03T10:48:09+08:00">
+                2017-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/08/03/搬瓦工安装ss并加速/" class="leancloud_visitors" data-flag-title="搬瓦工安装ss并加速">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="字数统计">
+                  636
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>搬瓦工（BandwagonHost）是美国IT7公司旗下的一家提供便宜年付OVZ架构的VPS主机方案的服务商。价格便宜、且依托的商家比较靠谱，具有较高的性价比。拿来搭个FQ是非常合适的，做个小站也是可以的。</p>
+<h1 id="1-购买地址"><a href="#1-购买地址" class="headerlink" title="1.购买地址"></a>1.购买地址</h1><blockquote>
+<p>搬瓦工所有配置及购买地址:<a href="https://bandwagonhost.com/aff.php?aff=17697" target="_blank" rel="noopener">https://bandwagonhost.com/aff.php?aff=17697</a><br>以前有小内存的VPS年费三刀，很便宜，但现在没有了，缺货，连521M的有时候也会缺货，看来挺火的。</p>
+</blockquote>
+<h1 id="2-安装Shadowsocks"><a href="#2-安装Shadowsocks" class="headerlink" title="2.安装Shadowsocks"></a>2.安装Shadowsocks</h1><h2 id="2-1搬瓦工后台一键安装-不推荐"><a href="#2-1搬瓦工后台一键安装-不推荐" class="headerlink" title="2.1搬瓦工后台一键安装(不推荐)"></a>2.1搬瓦工后台一键安装(不推荐)</h2><p>登录账号-&gt;Client Area-&gt;Services-&gt;My Services-&gt;KiwiVM Control Panel<br>来到管理面板，点击 Shadowsocks Server 就可以一键安装 Shadowsocks<br>测试过它自带的一键安装，速度太慢，yotube视频看不了，有点慢。</p>
+<h2 id="2-2使用shell脚本安装-推荐"><a href="#2-2使用shell脚本安装-推荐" class="headerlink" title="2.2使用shell脚本安装(推荐)"></a>2.2使用shell脚本安装(推荐)</h2><h3 id="2-2-1安装-shadowsoksR"><a href="#2-2-1安装-shadowsoksR" class="headerlink" title="2.2.1安装 shadowsoksR"></a>2.2.1安装 shadowsoksR</h3><p>Shadowsocks的一个分支，比较不错。但是默认是 aes-256-cfb 加密，如果需要 chacha20 加密，需要手动切换。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh</span><br><span class="line">chmod +x shadowsocksR.sh</span><br><span class="line">./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</span><br></pre></td></tr></table></figure></p>
+<p>安装成功需要等几分钟<br>这个速度可以看yotube无压力</p>
+<p>卸载方法：<br>使用 root 用户登录，运行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./shadowsocksR.sh uninstall</span><br></pre></td></tr></table></figure></p>
+<p>安装完成后即已后台启动 ShadowsocksR,运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks status</span><br></pre></td></tr></table></figure></p>
+<p>可以查看 ShadowsocksR 进程是否已经启动。<br>本脚本安装完成后，已将 ShadowsocksR 自动加入开机自启动。</p>
+<p>其它命令：<br>启动：/etc/init.d/shadowsocks start<br>停止：/etc/init.d/shadowsocks stop<br>重启：/etc/init.d/shadowsocks restart<br>状态：/etc/init.d/shadowsocks status</p>
+<p>配置文件路径：/etc/shadowsocks.json<br>日志文件路径：/var/log/shadowsocks.log<br>代码安装目录：/usr/local/shadowsocks</p>
+<h3 id="2-2-1安装-shadowsocks-go版本"><a href="#2-2-1安装-shadowsocks-go版本" class="headerlink" title="2.2.1安装 shadowsocks-go版本"></a>2.2.1安装 shadowsocks-go版本</h3><p>据说有buff，比python版Shadowsocks要快：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh</span><br><span class="line">chmod +x shadowsocks-go.sh</span><br><span class="line">./shadowsocks-go.sh 2&amp;gt;&amp;amp;1 | tee shadowsocks-go.log</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-2-3其他版本Shadowsocks一键安装："><a href="#2-2-3其他版本Shadowsocks一键安装：" class="headerlink" title="2.2.3其他版本Shadowsocks一键安装："></a>2.2.3其他版本Shadowsocks一键安装：</h3><p>来自 teddysun：<a href="https://github.com/teddysun/shadowsocks_install" target="_blank" rel="noopener">https://github.com/teddysun/shadowsocks_install</a></p>
+<h1 id="3-遇到的一些问题"><a href="#3-遇到的一些问题" class="headerlink" title="3.遇到的一些问题"></a>3.遇到的一些问题</h1><h2 id="3-1搬瓦工默认系统Centos没有wget命令需要安装"><a href="#3-1搬瓦工默认系统Centos没有wget命令需要安装" class="headerlink" title="3.1搬瓦工默认系统Centos没有wget命令需要安装"></a>3.1搬瓦工默认系统Centos没有wget命令需要安装</h2><p>安装命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-2关于配置多用户"><a href="#3-2关于配置多用户" class="headerlink" title="3.2关于配置多用户"></a>3.2关于配置多用户</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
+<p>只需要在port_password项下添加”端口号”:”密码”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</span><br><span class="line">    &quot;server_ipv6&quot;:&quot;[::]&quot;,</span><br><span class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,</span><br><span class="line">    &quot;local_port&quot;:1080,</span><br><span class="line">    &quot;port_password&quot;:&#123;</span><br><span class="line">        &quot;28998&quot;: &quot;123456&quot;,</span><br><span class="line">        &quot;28989&quot;: &quot;123456&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;timeout&quot;:120,</span><br><span class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</span><br><span class="line">    &quot;protocol&quot;:&quot;origin&quot;,</span><br><span class="line">    &quot;protocol_param&quot;:&quot;&quot;,</span><br><span class="line">    &quot;obfs&quot;:&quot;plain&quot;,</span><br><span class="line">    &quot;obfs_param&quot;:&quot;&quot;,</span><br><span class="line">    &quot;redirect&quot;:&quot;&quot;,</span><br><span class="line">    &quot;dns_ipv6&quot;:false,</span><br><span class="line">    &quot;fast_open&quot;:false,</span><br><span class="line">    &quot;workers&quot;:1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>参见:<a href="https://blog.kuoruan.com/48.html" target="_blank" rel="noopener">https://blog.kuoruan.com/48.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://zfblog.xyz/2017/07/02/JAVA实现MD5加密/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1947,195 +2144,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zfblog.xyz/2017/04/22/批处理for循环使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Frey">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="冬约❤夏至">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/22/批处理for循环使用/" itemprop="url">批处理for循环使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-22T13:08:19+08:00">
-                2017-04-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows/" itemprop="url" rel="index">
-                    <span itemprop="name">Windows</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/04/22/批处理for循环使用/" class="leancloud_visitors" data-flag-title="批处理for循环使用">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                <span title="字数统计">
-                  202
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>windows批处理FOR循环的使用<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/22/批处理for循环使用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2185,7 +2198,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2207,7 +2220,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2302,7 +2315,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="本站字数统计">11.0k</span>
+    <span title="本站字数统计">11.6k</span>
     <span class="post-meta-divider">|</span>
   
 

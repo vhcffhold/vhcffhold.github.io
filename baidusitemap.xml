@@ -3,6 +3,30 @@
 
 
     
+  <url>
+    <loc>http://zfblog.xyz/2017/08/03/%E6%90%AC%E7%93%A6%E5%B7%A5%E5%AE%89%E8%A3%85ss%E5%B9%B6%E5%8A%A0%E9%80%9F/</loc>
+    <lastmod>2017-12-20T08:47:12.264Z</lastmod>
+    <data>
+        <display>
+        <title>搬瓦工安装ss并加速</title>
+        <pubTime>2017-08-03T02:48:09.000Z</pubTime>
+        
+        <tag>centos</tag>
+         
+        <tag>搬瓦工</tag>
+         
+        <tag>shadowsocks</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="http://zfblog.xyz/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://zfblog.xyz/2017/08/03/Python2%E4%B8%8EPython3%E5%85%B1%E5%AD%98/</loc>
@@ -324,6 +348,10 @@
         <title>搬瓦工VPS搭建Web服务器</title>
         <pubTime>2017-08-04T03:40:29.000Z</pubTime>
         
+        <tag>centos</tag>
+         
+        <tag>搬瓦工</tag>
+         
         <tag>apache</tag>
          
         <tag>php</tag>
@@ -333,10 +361,6 @@
         <tag>web</tag>
          
         <tag>服务器</tag>
-         
-        <tag>centos</tag>
-         
-        <tag>搬瓦工</tag>
          
          
            

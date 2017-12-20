@@ -191,13 +191,13 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>centos</tag>
+        <tag>搬瓦工</tag>
         <tag>apache</tag>
         <tag>php</tag>
         <tag>mysql</tag>
         <tag>web</tag>
         <tag>服务器</tag>
-        <tag>centos</tag>
-        <tag>搬瓦工</tag>
       </tags>
   </entry>
   <entry>
@@ -209,6 +209,19 @@
       </categories>
       <tags>
         <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[搬瓦工安装ss并加速]]></title>
+    <url>%2F2017%2F08%2F03%2F%E6%90%AC%E7%93%A6%E5%B7%A5%E5%AE%89%E8%A3%85ss%E5%B9%B6%E5%8A%A0%E9%80%9F%2F</url>
+    <content type="text"><![CDATA[搬瓦工（BandwagonHost）是美国IT7公司旗下的一家提供便宜年付OVZ架构的VPS主机方案的服务商。价格便宜、且依托的商家比较靠谱，具有较高的性价比。拿来搭个FQ是非常合适的，做个小站也是可以的。 1.购买地址 搬瓦工所有配置及购买地址:https://bandwagonhost.com/aff.php?aff=17697以前有小内存的VPS年费三刀，很便宜，但现在没有了，缺货，连521M的有时候也会缺货，看来挺火的。 2.安装Shadowsocks2.1搬瓦工后台一键安装(不推荐)登录账号-&gt;Client Area-&gt;Services-&gt;My Services-&gt;KiwiVM Control Panel来到管理面板，点击 Shadowsocks Server 就可以一键安装 Shadowsocks测试过它自带的一键安装，速度太慢，yotube视频看不了，有点慢。 2.2使用shell脚本安装(推荐)2.2.1安装 shadowsoksRShadowsocks的一个分支，比较不错。但是默认是 aes-256-cfb 加密，如果需要 chacha20 加密，需要手动切换。123wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.shchmod +x shadowsocksR.sh./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log 安装成功需要等几分钟这个速度可以看yotube无压力 卸载方法：使用 root 用户登录，运行以下命令：1./shadowsocksR.sh uninstall 安装完成后即已后台启动 ShadowsocksR,运行：1/etc/init.d/shadowsocks status 可以查看 ShadowsocksR 进程是否已经启动。本脚本安装完成后，已将 ShadowsocksR 自动加入开机自启动。 其它命令：启动：/etc/init.d/shadowsocks start停止：/etc/init.d/shadowsocks stop重启：/etc/init.d/shadowsocks restart状态：/etc/init.d/shadowsocks status 配置文件路径：/etc/shadowsocks.json日志文件路径：/var/log/shadowsocks.log代码安装目录：/usr/local/shadowsocks 2.2.1安装 shadowsocks-go版本据说有buff，比python版Shadowsocks要快：123wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.shchmod +x shadowsocks-go.sh./shadowsocks-go.sh 2&amp;gt;&amp;amp;1 | tee shadowsocks-go.log 2.2.3其他版本Shadowsocks一键安装：来自 teddysun：https://github.com/teddysun/shadowsocks_install 3.遇到的一些问题3.1搬瓦工默认系统Centos没有wget命令需要安装安装命令:1yum -y install wget 3.2关于配置多用户1vi /etc/shadowsocks.json 只需要在port_password项下添加”端口号”:”密码”1234567891011121314151617181920&#123; &quot;server&quot;:&quot;0.0.0.0&quot;, &quot;server_ipv6&quot;:&quot;[::]&quot;, &quot;local_address&quot;:&quot;127.0.0.1&quot;, &quot;local_port&quot;:1080, &quot;port_password&quot;:&#123; &quot;28998&quot;: &quot;123456&quot;, &quot;28989&quot;: &quot;123456&quot; &#125;, &quot;timeout&quot;:120, &quot;method&quot;:&quot;aes-256-cfb&quot;, &quot;protocol&quot;:&quot;origin&quot;, &quot;protocol_param&quot;:&quot;&quot;, &quot;obfs&quot;:&quot;plain&quot;, &quot;obfs_param&quot;:&quot;&quot;, &quot;redirect&quot;:&quot;&quot;, &quot;dns_ipv6&quot;:false, &quot;fast_open&quot;:false, &quot;workers&quot;:1&#125; 参见:https://blog.kuoruan.com/48.html]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>搬瓦工</tag>
+        <tag>shadowsocks</tag>
       </tags>
   </entry>
   <entry>
