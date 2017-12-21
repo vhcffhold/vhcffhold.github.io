@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[字符串匹配]]></title>
+    <url>%2F2017%2F12%2F21%2F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%2F</url>
+    <content type="text"><![CDATA[1.BM算法2.KMP算法 1.BM算法从左到右依次比较s:主串r:模式串1234567891011121314int BM(char *s,int slen,char *r,int rlen)&#123; int i=1,j=1; while(i&lt;=slen-rlen+1)&#123; while(j&lt;=rlen&amp;&amp;s[i]==r[j])&#123; i++;j++; &#125; if(j&gt;rlen)&#123; return i-j+1; &#125;else&#123; j=1;i++; &#125; &#125; return 0;&#125; 2.KMP算法通过一个next数字当每次发生不匹配的时候模式串不必回到开头12345678910111213141516171819202122232425262728293031int* getnext(char *r, int n) &#123; //next数组求解 int i, j; int *next = (int *)malloc((n + 1) * sizeof(int)); next[0] = n; next[1] = 0; j = 0; i=1; while(i&lt;n)&#123; if (j == 0 || r[i] == r[j]) &#123; ++i; ++j; next[i] = j; &#125; else &#123; j = next[j]; &#125; &#125; return next;&#125;int KMP(char *s,int slen,char *r,int rlen)&#123; int *next=getnext(r,rlen); int i=1,j=1; while(i&lt;=slen&amp;&amp;j&lt;=rlen)&#123; while(j&lt;=rlen&amp;&amp;s[i]==r[j])&#123; i++;j++; &#125; if(j&gt;rlen)&#123; return i-j+1; &#125;else&#123; j=next[j];i++; &#125; &#125; return 0;&#125; 2017-12-21 20:57:49 参考文章1.字符串模式匹配的BM算法2.字符串匹配的KMP算法]]></content>
+      <categories>
+        <category>算法总结</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[sublime_Text3插入当前时间]]></title>
     <url>%2F2017%2F12%2F21%2Fsublime_Text3%E6%8F%92%E5%85%A5%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%2F</url>
-    <content type="text"><![CDATA[1.创建新snippettool → new snippet 创建一个新的snippet,并保存为”author.sublime-snippet”(最好在该目录(User)下再创建一个MySnippet目录):其内容:123456789101112131415&lt;snippet&gt;&lt;content&gt;&lt;![CDATA[/** * ============================ * @Author: XX * @Version: 1.0 * @DateTime: $&#123;1:alt+t&#125; * ============================ */]]&gt;&lt;/content&gt; &lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt; &lt;tabTrigger&gt;author&lt;/tabTrigger&gt; &lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt; &lt;!-- &lt;scope&gt;source.python&lt;/scope&gt; --&gt;&lt;/snippet&gt; 2.创建新插件Tools → New Plugin. 创建时间插件,保存在User目录,命名为addCurrentTime.py:其内容为:123456789import sublime, sublime_pluginimport datetimeclass AddCurrentTimeCommand(sublime_plugin.TextCommand): def run(self, edit): self.view.run_command("insert_snippet", &#123; "contents": "%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") &#125; ) 3.绑定快捷键Preference → Key Bindings → User.绑定快捷键:12345678[ &#123; &quot;command&quot;: &quot;add_current_time&quot;, &quot;keys&quot;: [ &quot;alt+t&quot; ] &#125;] 其中绑定的命令的名字是由所创建的插件的类名而来AddCurrentTimeCommand–&gt;add_current_time这应该是Sublime创建插件的规则 推荐阅读1,http://www.cnblogs.com/xiaomingzaixian/p/6984664.html2,http://blog.csdn.net/sshfl_csdn/article/details/46415551]]></content>
+    <content type="text"><![CDATA[1.创建新snippettool → new snippet 创建一个新的snippet,并保存为”author.sublime-snippet”(最好在该目录(User)下再创建一个MySnippet目录):其内容:123456789101112131415&lt;snippet&gt;&lt;content&gt;&lt;![CDATA[/** * ============================ * @Author: XX * @Version: 1.0 * @DateTime: $&#123;1:alt+t&#125; * ============================ */]]&gt;&lt;/content&gt; &lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt; &lt;tabTrigger&gt;author&lt;/tabTrigger&gt; &lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt; &lt;!-- &lt;scope&gt;source.python&lt;/scope&gt; --&gt;&lt;/snippet&gt; 2.创建新插件Tools → New Plugin. 创建时间插件,保存在User目录,命名为addCurrentTime.py:其内容为:123456789import sublime, sublime_pluginimport datetimeclass AddCurrentTimeCommand(sublime_plugin.TextCommand): def run(self, edit): self.view.run_command("insert_snippet", &#123; "contents": "%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") &#125; ) 3.绑定快捷键Preference → Key Bindings → User.绑定快捷键:12345678[ &#123; &quot;command&quot;: &quot;add_current_time&quot;, &quot;keys&quot;: [ &quot;alt+t&quot; ] &#125;] 其中绑定的命令的名字是由所创建的插件的类名而来AddCurrentTimeCommand–&gt;add_current_time这应该是Sublime创建插件的规则 参考资料1,http://www.cnblogs.com/xiaomingzaixian/p/6984664.html2,http://blog.csdn.net/sshfl_csdn/article/details/46415551]]></content>
       <categories>
         <category>软件使用</category>
       </categories>
