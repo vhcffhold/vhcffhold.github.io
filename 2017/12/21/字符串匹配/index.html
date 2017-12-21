@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="1.BM算法2.KMP算法">
+<meta name="description" content="1.BM算法 2.KMP算法">
 <meta name="keywords" content="C语言,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字符串匹配">
 <meta property="og:url" content="http://zfblog.xyz/2017/12/21/字符串匹配/index.html">
 <meta property="og:site_name" content="冬约❤夏至">
-<meta property="og:description" content="1.BM算法2.KMP算法">
+<meta property="og:description" content="1.BM算法 2.KMP算法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-21T13:27:03.362Z">
+<meta property="og:updated_time" content="2017-12-21T13:46:12.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符串匹配">
-<meta name="twitter:description" content="1.BM算法2.KMP算法">
+<meta name="twitter:description" content="1.BM算法 2.KMP算法">
 
 
 
@@ -400,7 +400,7 @@
                 </span>
                 
                 <span title="字数统计">
-                  278
+                  276
                 </span>
               
 
@@ -435,7 +435,9 @@
       
 
       
-        <p><a href="/2016/7/11/字符串匹配.html#1.BM算法"><font color="red">1.BM算法</font></a><br><a href="/2016/7/11/字符串匹配.html#2.KMP算法"><font color="red">2.KMP算法</font></a><br><a id="more"></a></p>
+        <a href="/2017/12/21/字符串匹配/" title="1.BM算法">1.BM算法</a>
+<a href="/2017/12/21/字符串匹配/" title="2.KMP算法">2.KMP算法</a>
+<a id="more"></a>
 <h1 id="1-BM算法"><a href="#1-BM算法" class="headerlink" title="1.BM算法"></a>1.BM算法</h1><p>从左到右依次比较<br>s:主串<br>r:模式串<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BM</span><span class="params">(<span class="keyword">char</span> *s,<span class="keyword">int</span> slen,<span class="keyword">char</span> *r,<span class="keyword">int</span> rlen)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>,j=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;=slen-rlen+<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">while</span>(j&lt;=rlen&amp;&amp;s[i]==r[j])&#123;</span><br><span class="line">			i++;j++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(j&gt;rlen)&#123;</span><br><span class="line">			<span class="keyword">return</span> i-j+<span class="number">1</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			j=<span class="number">1</span>;i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="2-KMP算法"><a href="#2-KMP算法" class="headerlink" title="2.KMP算法"></a>2.KMP算法</h1><p>通过一个next数字<br>当每次发生不匹配的时候<br>模式串不必回到开头<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">getnext</span><span class="params">(<span class="keyword">char</span> *r, <span class="keyword">int</span> n)</span> </span>&#123; <span class="comment">//next数组求解</span></span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	<span class="keyword">int</span> *next = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>((n + <span class="number">1</span>) * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">	next[<span class="number">0</span>] = n; next[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	j = <span class="number">0</span>;</span><br><span class="line">	i=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;n)&#123;</span><br><span class="line">		<span class="keyword">if</span> (j == <span class="number">0</span> || r[i] == r[j]) &#123;</span><br><span class="line">			++i; ++j;</span><br><span class="line">			next[i] = j;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			j = next[j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> next;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">KMP</span><span class="params">(<span class="keyword">char</span> *s,<span class="keyword">int</span> slen,<span class="keyword">char</span> *r,<span class="keyword">int</span> rlen)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> *next=getnext(r,rlen);</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">1</span>,j=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(i&lt;=slen&amp;&amp;j&lt;=rlen)&#123;</span><br><span class="line">		<span class="keyword">while</span>(j&lt;=rlen&amp;&amp;s[i]==r[j])&#123;</span><br><span class="line">			i++;j++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(j&gt;rlen)&#123;</span><br><span class="line">			<span class="keyword">return</span> i-j+<span class="number">1</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			j=next[j];i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><small>2017-12-21 20:57:49</small></p>
