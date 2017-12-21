@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[sublime_Text3插入当前时间]]></title>
+    <url>%2F2017%2F12%2F21%2Fsublime_Text3%E6%8F%92%E5%85%A5%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4%2F</url>
+    <content type="text"><![CDATA[1.创建新snippettool → new snippet 创建一个新的snippet,并保存为”author.sublime-snippet”(最好在该目录(User)下再创建一个MySnippet目录):其内容:123456789101112131415&lt;snippet&gt;&lt;content&gt;&lt;![CDATA[/** * ============================ * @Author: XX * @Version: 1.0 * @DateTime: $&#123;1:alt+t&#125; * ============================ */]]&gt;&lt;/content&gt; &lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt; &lt;tabTrigger&gt;author&lt;/tabTrigger&gt; &lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt; &lt;!-- &lt;scope&gt;source.python&lt;/scope&gt; --&gt;&lt;/snippet&gt; 2.创建新插件Tools → New Plugin. 创建时间插件,保存在User目录,命名为addCurrentTime.py:其内容为:123456789import sublime, sublime_pluginimport datetimeclass AddCurrentTimeCommand(sublime_plugin.TextCommand): def run(self, edit): self.view.run_command("insert_snippet", &#123; "contents": "%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") &#125; ) 3.绑定快捷键Preference → Key Bindings → User.绑定快捷键:12345678[ &#123; &quot;command&quot;: &quot;add_current_time&quot;, &quot;keys&quot;: [ &quot;alt+t&quot; ] &#125;] 其中绑定的命令的名字是由所创建的插件的类名而来AddCurrentTimeCommand–&gt;add_current_time这应该是Sublime创建插件的规则 推荐阅读1,http://www.cnblogs.com/xiaomingzaixian/p/6984664.html2,http://blog.csdn.net/sshfl_csdn/article/details/46415551]]></content>
+      <categories>
+        <category>软件使用</category>
+      </categories>
+      <tags>
+        <tag>sublime</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C语言文件读写]]></title>
     <url>%2F2017%2F12%2F12%2FC%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%2F</url>
     <content type="text"><![CDATA[C语言文件操作笔记123456FILE *fopen(char *filename,char *type); //打开文件int fclose(FILE *stream); //关闭文件int fgetc(FILE *stream); //读一个字符指针后移int getc(FILE *stream);int fputc(int ch,FILE *stream); //写一个字符指针后移int putc(int ch,FILE *stream);]]></content>
@@ -32,8 +43,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>centos</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
