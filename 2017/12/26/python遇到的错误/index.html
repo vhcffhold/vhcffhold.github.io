@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="python,centos," />
+  <meta name="keywords" content="python," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="下载python2.71[root@host ~]# wget http://python.org/ftp/python/2.7.3/Python-2.7.3.tar.bz2">
-<meta name="keywords" content="python,centos">
+<meta name="description" content="python使用在中遇到的错误">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS自带python2.6升级到2.7">
-<meta property="og:url" content="http://zfblog.xyz/2017/09/12/CentOS自带python2-6升级到2-7/index.html">
+<meta property="og:title" content="python遇到的错误">
+<meta property="og:url" content="http://zfblog.xyz/2017/12/26/python遇到的错误/index.html">
 <meta property="og:site_name" content="冬约❤夏至">
-<meta property="og:description" content="下载python2.71[root@host ~]# wget http://python.org/ftp/python/2.7.3/Python-2.7.3.tar.bz2">
+<meta property="og:description" content="python使用在中遇到的错误">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-17T12:53:28.807Z">
+<meta property="og:updated_time" content="2017-12-26T07:57:17.471Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS自带python2.6升级到2.7">
-<meta name="twitter:description" content="下载python2.71[root@host ~]# wget http://python.org/ftp/python/2.7.3/Python-2.7.3.tar.bz2">
+<meta name="twitter:title" content="python遇到的错误">
+<meta name="twitter:description" content="python使用在中遇到的错误">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://zfblog.xyz/2017/09/12/CentOS自带python2-6升级到2-7/"/>
+  <link rel="canonical" href="http://zfblog.xyz/2017/12/26/python遇到的错误/"/>
 
 
 
@@ -136,7 +136,7 @@
 </script>
 
 
-  <title>CentOS自带python2.6升级到2.7 | 冬约❤夏至</title>
+  <title>python遇到的错误 | 冬约❤夏至</title>
   
 
 
@@ -316,7 +316,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zfblog.xyz/2017/09/12/CentOS自带python2-6升级到2-7/">
+    <link itemprop="mainEntityOfPage" href="http://zfblog.xyz/2017/12/26/python遇到的错误/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Frey">
@@ -333,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CentOS自带python2.6升级到2.7</h1>
+          <h1 class="post-title" itemprop="name headline">python遇到的错误</h1>
         
 
         <div class="post-meta">
@@ -345,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-12T20:27:28+08:00">
-                2017-09-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-26T15:29:14+08:00">
+                2017-12-26
               </time>
             
 
@@ -368,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -385,7 +385,7 @@
 
           
           
-             <span id="/2017/09/12/CentOS自带python2-6升级到2-7/" class="leancloud_visitors" data-flag-title="CentOS自带python2.6升级到2.7">
+             <span id="/2017/12/26/python遇到的错误/" class="leancloud_visitors" data-flag-title="python遇到的错误">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -408,7 +408,7 @@
                 </span>
                 
                 <span title="字数统计">
-                  273
+                  136
                 </span>
               
 
@@ -443,17 +443,12 @@
       
 
       
-        <h1 id="下载python2-7"><a href="#下载python2-7" class="headerlink" title="下载python2.7"></a>下载python2.7</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@host ~]# wget http://python.org/ftp/python/2.7.3/Python-2.7.3.tar.bz2</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h1 id="解压并更改目录"><a href="#解压并更改目录" class="headerlink" title="解压并更改目录"></a>解压并更改目录</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@host ~]# tar -jxvf Python-2.7.3.tar.bz2</span><br><span class="line">[root@host ~]# cd Python-2.7.3</span><br></pre></td></tr></table></figure>
-<h1 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@host Python-2.7.3]# ./configure</span><br><span class="line">[root@host Python-2.7.3]# make all</span><br><span class="line">[root@host Python-2.7.3]# make install</span><br><span class="line">[root@host Python-2.7.3]# make clean</span><br><span class="line">[root@host Python-2.7.3]# make distclean</span><br></pre></td></tr></table></figure>
-<h2 id="安装需要gcc-如果系统没有gcc需要自己安装"><a href="#安装需要gcc-如果系统没有gcc需要自己安装" class="headerlink" title="安装需要gcc(如果系统没有gcc需要自己安装)"></a>安装需要gcc(如果系统没有gcc需要自己安装)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@host Python-2.7.3]# yum install -y gcc</span><br></pre></td></tr></table></figure>
-<h1 id="查看版本信息"><a href="#查看版本信息" class="headerlink" title="查看版本信息"></a>查看版本信息</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@host ~]# /usr/local/bin/python2.7 -V</span><br><span class="line">Python 2.7.3</span><br><span class="line">[root@host ~]# python -V</span><br><span class="line">Python 2.6.6</span><br></pre></td></tr></table></figure>
-<p>python2.7已经安装,但系统的python还是2.6</p>
-<h1 id="建立软连接，使系统默认的python指向python2-7"><a href="#建立软连接，使系统默认的python指向python2-7" class="headerlink" title="建立软连接，使系统默认的python指向python2.7"></a>建立软连接，使系统默认的python指向python2.7</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm /usr/bin/python /usr/bin/python2.6</span><br><span class="line">ln -s /usr/local/bin/python2.7 /usr/bin/python</span><br></pre></td></tr></table></figure>
-<p>但yum命令依赖python2.6.6，需要更改一些配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su root                         ##切换到root  </span><br><span class="line">vi /usr/bin/yum                 ##打开文件</span><br></pre></td></tr></table></figure></p>
-<p><del>/usr/bin/python</del>      ##删除此行<br>/usr/bin/python2.6.6            ##改为此行<br>更改需要管理员权限</p>
-<p>参考:<a href="http://blog.csdn.net/jcjc918/article/details/11022345" target="_blank" rel="noopener">http://blog.csdn.net/jcjc918/article/details/11022345</a></p>
+        <p>python使用在中遇到的错误<br><a id="more"></a></p>
+<p><font color="red">python ImportError: DLL load failed: %1 不是有效的 Win32 应用程序</font><br>解决方法：去下载与你所安装的Python版本对应的pywin32并安装<br>下载链接：<a href="https://sourceforge.net/projects/pywin32/files/pywin32/" target="_blank" rel="noopener">https://sourceforge.net/projects/pywin32/files/pywin32/</a><br>对应版本和位数<br>Python <font color="blue">2.7.13</font> (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 <font color="blue">32 bit</font> (Intel)] on win32<br>Type “help”, “copyright”, “credits” or “license” for more information.<br>还有一种可能是导入的模块是64位的，而你的python是32位的<br>参考:</p>
+<blockquote>
+<p><a href="http://blog.csdn.net/sinat_34615726/article/details/67636949" target="_blank" rel="noopener">http://blog.csdn.net/sinat_34615726/article/details/67636949</a></p>
+</blockquote>
+<p><small>2017-12-26 15:41:42</small></p>
 
       
     </div>
@@ -510,8 +505,6 @@
           
             <a href="/tags/python/" rel="tag"># python</a>
           
-            <a href="/tags/centos/" rel="tag"># centos</a>
-          
         </div>
       
 
@@ -523,8 +516,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/11/VC6聊天室程序设计/" rel="next" title="VC6聊天室程序设计">
-                <i class="fa fa-chevron-left"></i> VC6聊天室程序设计
+              <a href="/2017/12/21/字符串匹配/" rel="next" title="字符串匹配">
+                <i class="fa fa-chevron-left"></i> 字符串匹配
               </a>
             
           </div>
@@ -532,10 +525,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/12/图片头文件解析/" rel="prev" title="图片头文件解析">
-                图片头文件解析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -587,17 +576,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -683,22 +663,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载python2-7"><span class="nav-text">下载python2.7</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解压并更改目录"><span class="nav-text">解压并更改目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译安装"><span class="nav-text">编译安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装需要gcc-如果系统没有gcc需要自己安装"><span class="nav-text">安装需要gcc(如果系统没有gcc需要自己安装)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看版本信息"><span class="nav-text">查看版本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建立软连接，使系统默认的python指向python2-7"><span class="nav-text">建立软连接，使系统默认的python指向python2.7</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
