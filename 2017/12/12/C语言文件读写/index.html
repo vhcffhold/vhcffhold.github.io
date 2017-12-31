@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="冬约❤夏至">
 <meta property="og:description" content="C语言文件操作笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-21T12:41:33.945Z">
+<meta property="og:updated_time" content="2017-12-31T06:08:52.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言文件读写">
 <meta name="twitter:description" content="C语言文件操作笔记">
@@ -408,7 +408,7 @@
                 </span>
                 
                 <span title="字数统计">
-                  71
+                  372
                 </span>
               
 
@@ -444,6 +444,7 @@
 
       
         <p>C语言文件操作笔记<br><a id="more"></a><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">FILE *<span class="title">fopen</span><span class="params">(<span class="keyword">char</span> *filename,<span class="keyword">char</span> *type)</span></span>; <span class="comment">//打开文件</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fclose</span><span class="params">(FILE *stream)</span></span>; <span class="comment">//关闭文件</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fgetc</span><span class="params">(FILE *stream)</span></span>; <span class="comment">//读一个字符指针后移</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getc</span><span class="params">(FILE *stream)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fputc</span><span class="params">(<span class="keyword">int</span> ch,FILE *stream)</span></span>; <span class="comment">//写一个字符指针后移</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">putc</span><span class="params">(<span class="keyword">int</span> ch,FILE *stream)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p>filename指明文件路径<br>type可取的至如下<br>“r” :打开一个已有的文本文，允许读取文件<br>“w” :打开一个文本文件，允许写入文件。如果文件不存在，则会创建一个新文件。在这里，您的程序会从文件的开头写入内容<br>“a” :打开一个文本文件，以追加模式写入文件。如果文件不存在，则会创建一个新文件。在这里，您的程序会在已有的文件内容中追加内容。<br>“r+”:打开一个文本文件，允许读写文件<br>“w+”:打开一个文本文件，允许读写文件。如果文件已存在，则文件会被截断为零长度，如果文件不存在，则会创建一个新文件<br>“a+”:打开一个文本文件，允许读写文件。如果文件不存在，则会创建一个新文件。读取会从文件的开头开始，写入则只能是追加模式<br>如果处理的是二进制文件，则需使用下面的访问模式来取代上面的访问模式:<br><code>&quot;rb&quot;, &quot;wb&quot;, &quot;ab&quot;, &quot;rb+&quot;, &quot;r+b&quot;, &quot;wb+&quot;, &quot;w+b&quot;, &quot;ab+&quot;, &quot;a+b&quot;</code><br><small>2017-12-31 13:58:16</small></p>
 
       
     </div>
@@ -714,7 +715,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="本站字数统计">12.4k</span>
+    <span title="本站字数统计">12.7k</span>
     <span class="post-meta-divider">|</span>
   
 
