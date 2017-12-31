@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://zfblog.xyz/2017/12/31/Altium%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
     <lastmod>2017-12-31T10:41:11.560Z</lastmod>
@@ -246,9 +247,9 @@
         <title>CentOS自带python2.6升级到2.7</title>
         <pubTime>2017-09-12T12:27:28.000Z</pubTime>
         
-        <tag>centos</tag>
-         
         <tag>python</tag>
+         
+        <tag>centos</tag>
          
          
            
@@ -516,10 +517,6 @@
         <title>搬瓦工VPS搭建Web服务器</title>
         <pubTime>2017-08-04T03:40:29.000Z</pubTime>
         
-        <tag>centos</tag>
-         
-        <tag>搬瓦工</tag>
-         
         <tag>apache</tag>
          
         <tag>php</tag>
@@ -529,6 +526,10 @@
         <tag>web</tag>
          
         <tag>服务器</tag>
+         
+        <tag>centos</tag>
+         
+        <tag>搬瓦工</tag>
          
          
            
