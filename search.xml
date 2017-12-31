@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Altium快捷键]]></title>
+    <url>%2F2017%2F12%2F31%2FAltium%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
+    <content type="text"><![CDATA[快捷键使用ctrl+shft+T(top)：上对齐ctrl+shft+B(bottom):下对齐ctrl+shft+L(left):左对齐ctrl+shft+T(right):右对齐ctrl+shft+H(horizonta):水平方向上等距ctrl+shft+V(vertical):竖直方向上的等距]]></content>
+      <categories>
+        <category>软件使用</category>
+      </categories>
+      <tags>
+        <tag>Altium</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[位运算的妙用之二进制1的个数]]></title>
     <url>%2F2017%2F12%2F30%2F%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E5%A6%99%E7%94%A8%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B61%E7%9A%84%E4%B8%AA%E6%95%B0%2F</url>
     <content type="text"><![CDATA[题目：求出一个正整数转换成二进制形式中数字”1”的个数如：int 型数值为 80转化成二进制形式：80 = 00000000 00000000 00000000 01010000因此 1 的个数为 2 1.普通解法一位一位判断123456789int bitCount1(int n) &#123; int count = 0; while (n != 0) &#123; if (n &amp; 0x01 == 1) count++; n = n &gt;&gt; 1; &#125; return count;&#125; 2.大神的解法算法分析看参考12345678int bitCount2(int n) &#123; n = n - ((n &gt;&gt; 1) &amp; 0x55555555);//n = (n &amp; 0x55555555) + ((n &gt;&gt; 1) &amp; 0x55555555); n = (n &amp; 0x33333333) + ((n &gt;&gt; 2) &amp; 0x33333333); n = (n &amp; 0x0f0f0f0f) + ((n &gt;&gt; 4) &amp; 0x0f0f0f0f); n = n + (n &gt;&gt; 8); //n = (n &amp; 0x00ff00ff) + ((n &gt;&gt; 8) &amp; 0x00ff00ff); n = n + (n &gt;&gt; 16); //n = (n &amp; 0x0000ffff) + ((n &gt;&gt; 16) &amp; 0x0000ffff); return n &amp; 0x0000003f; //return n;&#125; 参考文章1.https://www.jianshu.com/p/25c75149e7a22017-12-30 16:32:32]]></content>
@@ -78,8 +89,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>python</tag>
         <tag>centos</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -237,13 +248,13 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>centos</tag>
+        <tag>搬瓦工</tag>
         <tag>apache</tag>
         <tag>php</tag>
         <tag>mysql</tag>
         <tag>web</tag>
         <tag>服务器</tag>
-        <tag>centos</tag>
-        <tag>搬瓦工</tag>
       </tags>
   </entry>
   <entry>
