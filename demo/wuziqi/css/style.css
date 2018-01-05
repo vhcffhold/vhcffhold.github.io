@@ -3,7 +3,23 @@ canvas{
 	margin: 50px auto;
 	box-shadow: -2px -2px 2px #EFEFEF, 5px 5px 5px #B9B9B9;
 }
-.bn_box {
-	display:block;
-	margin: 50px auto;
+header{
+    display:block;
+    margin:0 auto;
+    width:100%;
+    text-align:center;
+}
+
+header h1{
+    font-family:Arial;
+    font-size:40px;
+    font-weight:bold;
+    margin:0 auto;
+    max-width: 600px;
+}
+footer{
+     display:block;
+     margin:0 auto;
+     width:100%;
+     text-align:center;
 }
