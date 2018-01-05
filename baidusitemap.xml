@@ -6,7 +6,6 @@
     
     
     
-    
   <url>
     <loc>http://zfblog.xyz/2017/12/31/Altium%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
     <lastmod>2017-12-31T10:41:11.560Z</lastmod>
@@ -220,7 +219,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://zfblog.xyz/2017/08/03/Python2%E4%B8%8EPython3%E5%85%B1%E5%AD%98/</loc>
@@ -520,10 +518,6 @@
         <title>搬瓦工VPS搭建Web服务器</title>
         <pubTime>2017-08-04T03:40:29.000Z</pubTime>
         
-        <tag>centos</tag>
-         
-        <tag>搬瓦工</tag>
-         
         <tag>apache</tag>
          
         <tag>php</tag>
@@ -533,6 +527,10 @@
         <tag>web</tag>
          
         <tag>服务器</tag>
+         
+        <tag>centos</tag>
+         
+        <tag>搬瓦工</tag>
          
          
            
