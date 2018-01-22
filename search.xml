@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Git使用中的一些问题]]></title>
+    <url>%2F2018%2F01%2F22%2FGit%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[总结使用git的过程中遇到的问题 #1.配置问题全局配置123$ git config --list 查看当前用户信息$ git config --global user.name &quot;username&quot; 配置用户名$ git config --global user.email emailname@example.com 配置邮箱 项目配置(进入项目目录)123$ cat .git/config 项目配置信息$ git config user.name &quot;username&quot; 配置用户名$ git config user.email emailname@example.com 配置邮箱 全局的配置就是加上--global项目未设置的配置默认使用全局配置 #2.密钥问题123$ cd ~/.ssh 查看是否存在密钥$ ssh-keygen -t rsa -C &quot;emailname@example.com&quot; 生成密钥$ ssh -T git@github.com 测试是否配置成功 生成密钥过程中回车三次，是密码为空，不然每次push都要输入密码生成密钥后主要有两个文件~/.ssh/id_rsa私钥进行处理后的一些内容~/.ssh/id_rsa.pub公钥进行处理后的内容，提交到服务器(github或coding)的内容~/.ssh/known_hosts这个文件可能会有，是ssh对服务短的一些记录 #参考资料1,https://www.cnblogs.com/hustskyking/p/problems-in-git-when-ssh.html2,http://blog.csdn.net/u013626215/article/details/51508085]]></content>
+      <categories>
+        <category>软件使用</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Altium快捷键]]></title>
     <url>%2F2017%2F12%2F31%2FAltium%E5%BF%AB%E6%8D%B7%E9%94%AE%2F</url>
     <content type="text"><![CDATA[快捷键使用ctrl+shft+T(top)：上对齐ctrl+shft+B(bottom):下对齐ctrl+shft+L(left):左对齐ctrl+shft+T(right):右对齐ctrl+shft+H(horizonta):水平方向上等距ctrl+shft+V(vertical):竖直方向上的等距]]></content>
