@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://zfblog.xyz/2018/02/11/%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3%E6%B1%87%E7%BC%96/</loc>
-    <lastmod>2018-02-11T13:11:26.121Z</lastmod>
+    <lastmod>2018-02-11T13:25:18.646Z</lastmod>
     <data>
         <display>
         <title>简单了解汇编</title>
@@ -559,6 +559,10 @@
         <title>搬瓦工VPS搭建Web服务器</title>
         <pubTime>2017-08-04T03:40:29.000Z</pubTime>
         
+        <tag>centos</tag>
+         
+        <tag>搬瓦工</tag>
+         
         <tag>apache</tag>
          
         <tag>php</tag>
@@ -568,10 +572,6 @@
         <tag>web</tag>
          
         <tag>服务器</tag>
-         
-        <tag>centos</tag>
-         
-        <tag>搬瓦工</tag>
          
          
            

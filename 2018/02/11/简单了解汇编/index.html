@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="参考王爽的《汇编语言》一书，总结一些汇编的基础知识">
+<meta name="description" content="一些汇编的基础知识">
 <meta name="keywords" content="汇编,x8086">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单了解汇编">
 <meta property="og:url" content="http://zfblog.xyz/2018/02/11/简单了解汇编/index.html">
 <meta property="og:site_name" content="昔日风">
-<meta property="og:description" content="参考王爽的《汇编语言》一书，总结一些汇编的基础知识">
+<meta property="og:description" content="一些汇编的基础知识">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-11T13:11:26.121Z">
+<meta property="og:updated_time" content="2018-02-11T13:25:18.646Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单了解汇编">
-<meta name="twitter:description" content="参考王爽的《汇编语言》一书，总结一些汇编的基础知识">
+<meta name="twitter:description" content="一些汇编的基础知识">
 
 
 
@@ -398,7 +398,7 @@
                 </span>
                 
                 <span title="字数统计">
-                  362
+                  388
                 </span>
               
 
@@ -433,11 +433,10 @@
       
 
       
-        <p>参考王爽的《汇编语言》一书，总结一些汇编的基础知识<br><a id="more"></a></p>
-<h1 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h1><h2 id="1-1汇编是什么"><a href="#1-1汇编是什么" class="headerlink" title="1.1汇编是什么"></a>1.1汇编是什么</h2><p>汇编语言的主体是汇编指令，汇编指令是由机器指令发展而来，例如：<br>操作：将寄存器bx的内容送到ax<br>机器指令：101100000000000000000011<br>记起来太过于复杂，从而有了替代它的<br>汇编指令：<code>mov ax,bx</code><br>方便记忆，也符合人们的逻辑思维<br>程序员们编写汇编指令，在通过编译器编译成机器指令，然后就可以在计算机中运行了（如今的大部分高级语言是通过编译器，将高级语言转换成汇编语言，在编译成机器语言在电脑中运行）<br>不管什么语言，都要转换成机器语言在电脑中运行，汇编语言和高级语言都是人们为了简化程序制作过程而已</p>
-<h2 id="1-2计算机的总线"><a href="#1-2计算机的总线" class="headerlink" title="1.2计算机的总线"></a>1.2计算机的总线</h2><p>从逻辑上总线分为三类（8086）<br>数据总线：传送数据，总线宽度决定一次读取数据多少（16）<br>地址总线：指定地址，总线宽度决定寻址能力（20）<br>控制总线：控制读写</p>
-<h1 id="2CPU中的寄存器"><a href="#2CPU中的寄存器" class="headerlink" title="2CPU中的寄存器"></a>2CPU中的寄存器</h1><p>CPU的内部主要有各种寄存器组成<br>以x8086为主介绍常用的寄存器<br>①通用寄存器<br>AX：<br>BX：<br>CX：<br>DX：</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>1,《汇编语言》王爽著</p>
+        <p>一些汇编的基础知识<br><a id="more"></a></p>
+<h1 id="1-汇编是什么"><a href="#1-汇编是什么" class="headerlink" title="1.汇编是什么"></a>1.汇编是什么</h1><p>汇编语言的主体是汇编指令，汇编指令是由机器指令发展而来，例如：<br>操作：将寄存器bx的内容送到ax<br>机器指令：101100000000000000000011<br>记起来太过于复杂，从而有了替代它的<br>汇编指令：<code>mov ax,bx</code><br>方便记忆，也符合人们的逻辑思维<br>程序员们编写汇编指令，在通过编译器编译成机器指令，然后就可以在计算机中运行了（如今的大部分高级语言是通过编译器，将高级语言转换成汇编语言，在编译成机器语言在电脑中运行）<br>不管什么语言，都要转换成机器语言在电脑中运行，汇编语言和高级语言都是人们为了简化程序制作过程而已</p>
+<h1 id="2-计算机的总线"><a href="#2-计算机的总线" class="headerlink" title="2.计算机的总线"></a>2.计算机的总线</h1><p>从逻辑上总线分为三类（8086）<br>数据总线：传送数据，总线宽度决定一次读取数据多少（16）<br>地址总线：指定地址，总线宽度决定寻址能力（20）<br>控制总线：控制读写</p>
+<h1 id="3-存储器"><a href="#3-存储器" class="headerlink" title="3.存储器"></a>3.存储器</h1><p>RAM：程序和数据都要加载到RAM即内存中，才能通过CPU运行，可读可写<br>ROM：一些芯片的主要参数，及操作指令，芯片出厂时已经固定，仅可读<br>计算机运行时，全部程序和数据都要加载到RAM中<br>通过ROM中的一些必要信息，CPU才能对外设进行操作</p>
 
       
     </div>
@@ -673,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-基础知识"><span class="nav-text">1.基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1汇编是什么"><span class="nav-text">1.1汇编是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2计算机的总线"><span class="nav-text">1.2计算机的总线</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2CPU中的寄存器"><span class="nav-text">2CPU中的寄存器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-汇编是什么"><span class="nav-text">1.汇编是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-计算机的总线"><span class="nav-text">2.计算机的总线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-存储器"><span class="nav-text">3.存储器</span></a></li></ol></div>
             
 
           </div>
@@ -729,7 +728,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="本站字数统计">13.4k</span>
+    <span title="本站字数统计">13.5k</span>
     <span class="post-meta-divider">|</span>
   
 
