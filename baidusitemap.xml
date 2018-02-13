@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://zfblog.xyz/2018/02/12/DEBUG%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/</loc>
-    <lastmod>2018-02-12T12:32:14.357Z</lastmod>
+    <lastmod>2018-02-13T14:41:59.863Z</lastmod>
     <data>
         <display>
         <title>DEBUG常用功能</title>
@@ -581,6 +581,10 @@
         <title>搬瓦工VPS搭建Web服务器</title>
         <pubTime>2017-08-04T03:40:29.000Z</pubTime>
         
+        <tag>centos</tag>
+         
+        <tag>搬瓦工</tag>
+         
         <tag>apache</tag>
          
         <tag>php</tag>
@@ -590,10 +594,6 @@
         <tag>web</tag>
          
         <tag>服务器</tag>
-         
-        <tag>centos</tag>
-         
-        <tag>搬瓦工</tag>
          
          
            
