@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://zfblog.xyz/2018/02/24/STM8L%E6%97%B6%E9%92%9F%E5%AF%84%E5%AD%98%E5%99%A8/</loc>
+    <lastmod>2018-02-24T13:57:12.152Z</lastmod>
+    <data>
+        <display>
+        <title>STM8L时钟寄存器</title>
+        <pubTime>2018-02-24T13:43:29.000Z</pubTime>
+        
+        <tag>STM8</tag>
+         
+        <tag>CLK</tag>
+         
+         
+           
+             
+              <breadCrumb title="硬件编程" url="http://zfblog.xyz/categories/%E7%A1%AC%E4%BB%B6%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://zfblog.xyz/2018/02/12/DEBUG%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/</loc>
     <lastmod>2018-02-13T14:41:59.863Z</lastmod>
     <data>
@@ -581,10 +603,6 @@
         <title>搬瓦工VPS搭建Web服务器</title>
         <pubTime>2017-08-04T03:40:29.000Z</pubTime>
         
-        <tag>centos</tag>
-         
-        <tag>搬瓦工</tag>
-         
         <tag>apache</tag>
          
         <tag>php</tag>
@@ -594,6 +612,10 @@
         <tag>web</tag>
          
         <tag>服务器</tag>
+         
+        <tag>centos</tag>
+         
+        <tag>搬瓦工</tag>
          
          
            
