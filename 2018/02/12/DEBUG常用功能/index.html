@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://zfblog.xyz/imgs2018/2_13_U命令.PNG">
 <meta property="og:image" content="http://zfblog.xyz/imgs2018/2_13_T命令.PNG">
 <meta property="og:image" content="http://zfblog.xyz/imgs2018/2_13_A命令.PNG">
-<meta property="og:updated_time" content="2018-02-13T14:41:59.863Z">
+<meta property="og:updated_time" content="2018-03-26T14:14:36.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DEBUG常用功能">
 <meta name="twitter:description" content="window 10中DEBUG的安装以及DEBUG调试中一些常用的命令">
@@ -745,12 +745,12 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="本站字数统计">14.0k</span>
+    <span title="本站字数统计">14.1k</span>
     <span class="post-meta-divider">|</span>
   
 
   
-    <span class="site-uv" title="访客数">
+    <span class="site-uv" id="busuanzi_container_site_uv" style='display:none' title="访客数">
       <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
       人
@@ -758,7 +758,7 @@
   
 
   
-    <span class="site-pv" title="访问量">
+    <span class="site-pv" id="busuanzi_container_site_pv" style='display:none' title="访问量">
       <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
       次
@@ -1379,6 +1379,30 @@
 
   
   <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+  
+  <!-- 不蒜子计数初始值纠正 -->
+    <script >
+        $(document).ready(function() {
+          var intpv = setInterval(fixCountpv, 50);  // 50ms周期检测函数
+          var intuv = setInterval(fixCountuv, 50);
+          var countOffsetpv = 5037;  // 初始化首次数据
+          var countOffsetuv = 2275;
+          function fixCountpv() {                   
+           if ($("#busuanzi_container_site_pv").css("display") != "none"){
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffsetpv); // 加上初始数据
+                clearInterval(intpv); // 停止检测
+            }
+          }
+          function fixCountuv() {                   
+           if ($("#busuanzi_container_site_uv").css("display") != "none"){
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffsetuv); // 加上初始数据
+                clearInterval(intuv); // 停止检测
+            }
+          }
+        });
+    </script>
   
   
 </body>

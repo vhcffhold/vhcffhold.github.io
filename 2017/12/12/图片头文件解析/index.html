@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="1.PNG图片文件头PNG图像格式文件由一个8字节的PNG文件标识（file signature）域和3个以上的后续数据块（IHDR、IDAT、IEND）组成。">
+<meta name="description" content="1.PNG图片文件头1.1PNG文件结构PNG图像格式文件由一个8字节的PNG文件标识（file signature）域和3个以上的后续数据块（IHDR、IDAT、IEND等）组成。">
 <meta name="keywords" content="文件头,图片">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图片头文件解析">
 <meta property="og:url" content="http://zfblog.xyz/2017/12/12/图片头文件解析/index.html">
 <meta property="og:site_name" content="昔日风">
-<meta property="og:description" content="1.PNG图片文件头PNG图像格式文件由一个8字节的PNG文件标识（file signature）域和3个以上的后续数据块（IHDR、IDAT、IEND）组成。">
+<meta property="og:description" content="1.PNG图片文件头1.1PNG文件结构PNG图像格式文件由一个8字节的PNG文件标识（file signature）域和3个以上的后续数据块（IHDR、IDAT、IEND等）组成。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-20T09:30:22.055Z">
+<meta property="og:updated_time" content="2018-03-27T07:37:30.790Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图片头文件解析">
-<meta name="twitter:description" content="1.PNG图片文件头PNG图像格式文件由一个8字节的PNG文件标识（file signature）域和3个以上的后续数据块（IHDR、IDAT、IEND）组成。">
+<meta name="twitter:description" content="1.PNG图片文件头1.1PNG文件结构PNG图像格式文件由一个8字节的PNG文件标识（file signature）域和3个以上的后续数据块（IHDR、IDAT、IEND等）组成。">
 
 
 
@@ -398,7 +398,7 @@
                 </span>
                 
                 <span title="字数统计">
-                  218
+                  400
                 </span>
               
 
@@ -433,7 +433,7 @@
       
 
       
-        <h1 id="1-PNG图片文件头"><a href="#1-PNG图片文件头" class="headerlink" title="1.PNG图片文件头"></a>1.PNG图片文件头</h1><p>PNG图像格式文件由一个8字节的PNG文件标识（file signature）域和3个以上的后续数据块（IHDR、IDAT、IEND）组成。<br><a id="more"></a><br>PNG文件包括8字节文件署名（89 50 4E 47 0D 0A 1A 0A，十六进制），用来识别PNG格式。</p>
+        <h1 id="1-PNG图片文件头"><a href="#1-PNG图片文件头" class="headerlink" title="1.PNG图片文件头"></a>1.PNG图片文件头</h1><h2 id="1-1PNG文件结构"><a href="#1-1PNG文件结构" class="headerlink" title="1.1PNG文件结构"></a>1.1PNG文件结构</h2><p>PNG图像格式文件由一个8字节的PNG文件标识（file signature）域和3个以上的后续数据块（IHDR、IDAT、IEND等）组成。<br><a id="more"></a><br>PNG文件包括8字节文件署名（89 50 4E 47 0D 0A 1A 0A，十六进制），用来识别PNG格式。</p>
 <table>
 <thead>
 <tr>
@@ -465,6 +465,9 @@
 </tbody>
 </table>
 <!-- 12/12/2017 9:48:07 PM -->
+<h2 id="1-2PNG数据块（chunk）"><a href="#1-2PNG数据块（chunk）" class="headerlink" title="1.2PNG数据块（chunk）"></a>1.2PNG数据块（chunk）</h2><p>PNG定义了两种类型的数据块，一种是称为关键数据块(critical chunk)，这是标准的数据块，另一种叫做辅助数据块(ancillary chunks)，这是可选的数据块。<br>关键数据块定义了4个标准数据块，每个PNG文件都必须包含它们，PNG读写软件也都必须要支持这些数据块。虽然PNG文件规范没有要求PNG编译码器对可选数据块进行编码和译码，但规范提倡支持可选数据块。</p>
+<p>下表就是PNG中数据块的类别，其中，关键数据块部分我们使用深色背景加以区分。</p>
+
       
     </div>
     
@@ -703,7 +706,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-PNG图片文件头"><span class="nav-text">1.PNG图片文件头</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-PNG图片文件头"><span class="nav-text">1.PNG图片文件头</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1PNG文件结构"><span class="nav-text">1.1PNG文件结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2PNG数据块（chunk）"><span class="nav-text">1.2PNG数据块（chunk）</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -759,12 +762,12 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="本站字数统计">14.0k</span>
+    <span title="本站字数统计">14.1k</span>
     <span class="post-meta-divider">|</span>
   
 
   
-    <span class="site-uv" title="访客数">
+    <span class="site-uv" id="busuanzi_container_site_uv" style='display:none' title="访客数">
       <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
       人
@@ -772,7 +775,7 @@
   
 
   
-    <span class="site-pv" title="访问量">
+    <span class="site-pv" id="busuanzi_container_site_pv" style='display:none' title="访问量">
       <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
       次
@@ -1393,6 +1396,30 @@
 
   
   <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+  
+  <!-- 不蒜子计数初始值纠正 -->
+    <script >
+        $(document).ready(function() {
+          var intpv = setInterval(fixCountpv, 50);  // 50ms周期检测函数
+          var intuv = setInterval(fixCountuv, 50);
+          var countOffsetpv = 5037;  // 初始化首次数据
+          var countOffsetuv = 2275;
+          function fixCountpv() {                   
+           if ($("#busuanzi_container_site_pv").css("display") != "none"){
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffsetpv); // 加上初始数据
+                clearInterval(intpv); // 停止检测
+            }
+          }
+          function fixCountuv() {                   
+           if ($("#busuanzi_container_site_uv").css("display") != "none"){
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffsetuv); // 加上初始数据
+                clearInterval(intuv); // 停止检测
+            }
+          }
+        });
+    </script>
   
   
 </body>
