@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="昔日风">
 <meta property="og:description" content="1.PNG图片文件头1.1PNG文件结构PNG图像格式文件由一个8字节的PNG文件标识（file signature）域和3个以上的后续数据块（IHDR、IDAT、IEND等）组成。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-27T07:37:30.790Z">
+<meta property="og:updated_time" content="2018-03-29T10:45:15.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图片头文件解析">
 <meta name="twitter:description" content="1.PNG图片文件头1.1PNG文件结构PNG图像格式文件由一个8字节的PNG文件标识（file signature）域和3个以上的后续数据块（IHDR、IDAT、IEND等）组成。">
@@ -400,7 +400,7 @@
                 </span>
                 
                 <span title="字数统计">
-                  400
+                  701
                 </span>
               
 
@@ -414,7 +414,7 @@
                 </span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -468,7 +468,8 @@
 </table>
 <!-- 12/12/2017 9:48:07 PM -->
 <h2 id="1-2PNG数据块（chunk）"><a href="#1-2PNG数据块（chunk）" class="headerlink" title="1.2PNG数据块（chunk）"></a>1.2PNG数据块（chunk）</h2><p>PNG定义了两种类型的数据块，一种是称为关键数据块(critical chunk)，这是标准的数据块，另一种叫做辅助数据块(ancillary chunks)，这是可选的数据块。<br>关键数据块定义了4个标准数据块，每个PNG文件都必须包含它们，PNG读写软件也都必须要支持这些数据块。虽然PNG文件规范没有要求PNG编译码器对可选数据块进行编码和译码，但规范提倡支持可选数据块。</p>
-<p>下表就是PNG中数据块的类别，其中，关键数据块部分我们使用深色背景加以区分。</p>
+<p>下表就是PNG中数据块的类别，其中，关键数据块部分我们使用红色背景加以区分。</p>
+<p><table border="1" cellspacing="1" cellpadding="0"><tbody><tr><td colspan="5"><div align="center"><strong>PNG文件格式中的数据块</strong></div></td></tr><tr><td><div align="center"><strong>数据块符号</strong></div></td><td><div align="center"><strong>数据块名称</strong></div></td><td><div align="center"><strong>多数据块</strong></div></td><td><div align="center"><strong>可选否</strong></div></td><td><div align="center"><strong>位置限制</strong></div></td></tr><tr style="background: red"><td><div align="left" black="">IHDR</div></td><td><div align="left">文件头数据块</div></td><td><div align="left">否</div></td><td><div align="left">否</div></td><td><div align="left">第一块</div></td></tr><tr><td><div align="left">cHRM</div></td><td><div align="left">基色和白色点数据块</div></td><td><div align="left">否</div></td><td><div align="left">是</div></td><td><div align="left">在PLTE和IDAT之前</div></td></tr><tr><td><div align="left">gAMA</div></td><td><div align="left">图像γ数据块</div></td><td><div align="left">否</div></td><td><div align="left">是</div></td><td><div align="left">在PLTE和IDAT之前</div></td></tr><tr><td><div align="left">sBIT</div></td><td><div align="left">样本有效位数据块</div></td><td><div align="left">否</div></td><td><div align="left">是</div></td><td><div align="left">在PLTE和IDAT之前</div></td></tr><tr style="background: red"><td><div align="left">PLTE</div></td><td><div align="left">调色板数据块</div></td><td><div align="left">否</div></td><td><div align="left">是</div></td><td><div align="left">在IDAT之前</div></td></tr><tr><td><div align="left">bKGD</div></td><td><div align="left">背景颜色数据块</div></td><td><div align="left">否</div></td><td><div align="left">是</div></td><td><div align="left">在PLTE之后IDAT之前</div></td></tr><tr><td><div align="left">hIST</div></td><td><div align="left">图像直方图数据块</div></td><td><div align="left">否</div></td><td><div align="left">是</div></td><td><div align="left">在PLTE之后IDAT之前</div></td></tr><tr><td><div align="left">tRNS</div></td><td><div align="left">图像透明数据块</div></td><td><div align="left">否</div></td><td><div align="left">是</div></td><td><div align="left">在PLTE之后IDAT之前</div></td></tr><tr><td><div align="left">oFFs</div></td><td><div align="left">(专用公共数据块)</div></td><td><div align="left">否</div></td><td><div align="left">是</div></td><td><div align="left">在IDAT之前</div></td></tr><tr><td><div align="left">pHYs</div></td><td><div align="left">物理像素尺寸数据块</div></td><td><div align="left">否</div></td><td><div align="left">是</div></td><td><div align="left">在IDAT之前</div></td></tr><tr><td><div align="left">sCAL</div></td><td><div align="left">(专用公共数据块)</div></td><td><div align="left">否</div></td><td><div align="left">是</div></td><td><div align="left">在IDAT之前</div></td></tr><tr style="background: red"><td><div align="left">IDAT</div></td><td><div align="left">图像数据块</div></td><td><div align="left">是</div></td><td><div align="left">否</div></td><td><div align="left">与其他IDAT连续</div></td></tr><tr><td><div align="left">tIME</div></td><td><div align="left">图像最后修改时间数据块</div></td><td><div align="left">否</div></td><td><div align="left">是</div></td><td><div align="left">无限制</div></td></tr><tr><td><div align="left">tEXt</div></td><td><div align="left">文本信息数据块</div></td><td><div align="left">是</div></td><td><div align="left">是</div></td><td><div align="left">无限制</div></td></tr><tr><td><div align="left">zTXt</div></td><td><div align="left">压缩文本数据块</div></td><td><div align="left">是</div></td><td><div align="left">是</div></td><td><div align="left">无限制</div></td></tr><tr><td><div align="left">fRAc</div></td><td><div align="left">(专用公共数据块)</div></td><td><div align="left">是</div></td><td><div align="left">是</div></td><td><div align="left">无限制</div></td></tr><tr><td><div align="left">gIFg</div></td><td><div align="left">(专用公共数据块)</div></td><td><div align="left">是</div></td><td><div align="left">是</div></td><td><div align="left">无限制</div></td></tr><tr><td><div align="left">gIFt</div></td><td><div align="left">(专用公共数据块)</div></td><td><div align="left">是</div></td><td><div align="left">是</div></td><td><div align="left">无限制</div></td></tr><tr><td><div align="left">gIFx</div></td><td><div align="left">(专用公共数据块)</div></td><td><div align="left">是</div></td><td><div align="left">是</div></td><td><div align="left">无限制</div></td></tr><tr style="background: red"><td><div align="left">IEND</div></td><td><div align="left">图像结束数据</div></td><td><div align="left">否</div></td><td><div align="left">否</div></td><td><div align="left">最后一个数据块</div></td></tr></tbody></table><br><small>&lt;–2018-03-29 18:44:39–&gt;</small></p>
 
       
     </div>
@@ -764,7 +765,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="本站字数统计">14.1k</span>
+    <span title="本站字数统计">14.4k</span>
   
 
   
