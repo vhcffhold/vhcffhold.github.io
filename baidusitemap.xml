@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://zfblog.xyz/2018/04/07/%E4%BD%BF%E7%94%A8%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97-%E8%AF%91/</loc>
+    <lastmod>2018-04-07T11:12:07.527Z</lastmod>
+    <data>
+        <display>
+        <title>使用神经网络识别手写数字[译]</title>
+        <pubTime>2018-04-07T09:45:48.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>神经网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://zfblog.xyz/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://zfblog.xyz/2017/12/12/%E5%9B%BE%E7%89%87%E5%A4%B4%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2018-03-29T10:45:15.683Z</lastmod>
     <data>
@@ -581,6 +603,10 @@
         <title>搬瓦工VPS搭建Web服务器</title>
         <pubTime>2017-08-04T03:40:29.000Z</pubTime>
         
+        <tag>centos</tag>
+         
+        <tag>搬瓦工</tag>
+         
         <tag>apache</tag>
          
         <tag>php</tag>
@@ -590,10 +616,6 @@
         <tag>web</tag>
          
         <tag>服务器</tag>
-         
-        <tag>centos</tag>
-         
-        <tag>搬瓦工</tag>
          
          
            
