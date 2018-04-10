@@ -172,7 +172,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Frey's blog</p>
+        <h1 class="site-subtitle" itemprop="description">Frey's blog</h1>
       
   </div>
 
@@ -325,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">搬瓦工VPS搭建Web服务器</h1>
+          <h2 class="post-title" itemprop="name headline">搬瓦工VPS搭建Web服务器</h2>
         
 
         <div class="post-meta">
@@ -443,12 +443,12 @@
 <p>到此Apache安装完成，在自己浏览器中输入主机IP和端口号能正常打开</p>
 <h1 id="安装php"><a href="#安装php" class="headerlink" title="安装php"></a>安装php</h1><p>命令为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install php</span><br><span class="line">yum install php-mysql  php-gd  php-imap  php-ldap  php-odbc php-pear  php-xml  php-xmlrpc</span><br><span class="line">yum install php-mysql</span><br></pre></td></tr></table></figure></p>
 <p>以上命令为安装php及其支持的组件</p>
-<h1 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h1><p>##安装<br>首先查看主机是否已经安装<code>rpm -qa|grep mysql</code></p>
+<h1 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先查看主机是否已经安装<code>rpm -qa|grep mysql</code></p>
 <p>注意：可能检查中安装有php-mysql XXXXX 和 mysql-libXXXX,这是刚刚第二步安装的php的组件,不必理会</p>
 <p>已经安装的话就执行删除命令<code>rmp -e mysql</code></p>
 <p>然后继续安装<br>使用命令<code>yum list | grep mysql</code><br>来查看yum上提供的mysql数据库可下载的版本</p>
 <p>安装命令<code>yum install -y mysql-server mysql mysql-devel</code><br>等待一段时间安装成功</p>
-<p>##配置<br>接下来是对mysql的配置(<font color="red">注意:命令中是”mysqld”,不是mysql</font>)</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>接下来是对mysql的配置(<font color="red">注意:命令中是”mysqld”,不是mysql</font>)</p>
 <p>初始化:<code>service mysqld start</code><br>重启:<code>service mysqld restart</code><br>配置开机自动启动:<code>chkconfig mysqld on</code></p>
 <p>为mysql的root账户设置密码:<code>mysqladmin -u root password &#39;*********&#39;</code><br>登录命令<code>mysql -u root -p</code></p>
 
@@ -700,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装apache"><span class="nav-text">安装apache</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装php"><span class="nav-text">安装php</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装mysql"><span class="nav-text">安装mysql</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装apache"><span class="nav-text">安装apache</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装php"><span class="nav-text">安装php</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装mysql"><span class="nav-text">安装mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-text">配置</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -756,7 +756,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="本站字数统计">19.1k</span>
+    <span title="本站字数统计">19.4k</span>
   
 
   
@@ -1398,6 +1398,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
