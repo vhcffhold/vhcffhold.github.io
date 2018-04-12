@@ -105,7 +105,14 @@
 <meta property="og:image" content="http://www.vhcffh.com/imgs2018/4_17_step_graph.PNG">
 <meta property="og:image" content="http://www.vhcffh.com/imgs2018/4_17_tikz10.png">
 <meta property="og:image" content="http://www.vhcffh.com/imgs2018/4_17_tikz11.png">
-<meta property="og:updated_time" content="2018-04-11T08:09:53.546Z">
+<meta property="og:image" content="http://www.vhcffh.com/imgs2018/4_17_digits.png">
+<meta property="og:image" content="http://www.vhcffh.com/imgs2018/4_17_digits_separate.png">
+<meta property="og:image" content="http://www.vhcffh.com/imgs2018/4_17_mnist_first_digit.png">
+<meta property="og:image" content="http://www.vhcffh.com/imgs2018/4_17_tikz12.png">
+<meta property="og:image" content="http://www.vhcffh.com/imgs2018/4_17_mnist_top_left_feature.png">
+<meta property="og:image" content="http://www.vhcffh.com/imgs2018/4_17_mnist_other_features.png">
+<meta property="og:image" content="http://www.vhcffh.com/imgs2018/4_17_mnist_complete_zero.png">
+<meta property="og:updated_time" content="2018-04-12T14:17:35.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用神经网络识别手写数字[译]">
 <meta name="twitter:description" content="使用神经网络识别手写数字">
@@ -437,7 +444,7 @@
                 </span>
                 
                 <span title="字数统计">
-                  7,253
+                  8,671
                 </span>
               
 
@@ -451,7 +458,7 @@
                 </span>
                 
                 <span title="阅读时长">
-                  25
+                  30
                 </span>
               
             </div>
@@ -528,7 +535,14 @@ output=\begin{cases}
 <p>到目前为止，我们一直在讨论神经网络，其中一层的输出被用作下一层的输入。这种网络被称为前馈神经网络。这意味着网络中没有环路 - 信息总是前馈，永不反馈。如果我们确实有循环，最终会出现$\sigma$函数的输入取决于输出的情况。这很难理解，所以我们不允许这样的循环。</p>
 <p>但是，还有其他可以反馈回路的人工神经网络模型。这些模型被称为递归神经网络。这些模型中的想法是让神经元在静止之前在有限的时间内发射。这种射击可以刺激其他神经元，这些神经元可能会在稍后发射，持续时间也有限。这会导致更多的神经元发射，所以随着时间的推移，我们会得到一连串的神经元发射。循环不会在这样的模型中产生问题，因为神经元的输出仅在稍后时间而不是瞬时影响其输入。</p>
 <p>递归神经网络比前馈网络的影响力小，部分原因是递归网络的学习算法（至少到目前为止）不那么强大。但递归网络仍然非常有趣。他们在精神上更接近我们的大脑如何工作，而不是前馈网络。有可能的是，递归网络可以解决重要问题，而这些问题只能通过前馈网络很难解决。</p>
-<h3 id="1-5一个简单的网络来分类手写数字"><a href="#1-5一个简单的网络来分类手写数字" class="headerlink" title="1.5一个简单的网络来分类手写数字"></a>1.5一个简单的网络来分类手写数字</h3><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>原文:<a href="http://neuralnetworksanddeeplearning.com/chap1.html" target="_blank" rel="noopener">http://neuralnetworksanddeeplearning.com/chap1.html</a></p>
+<h3 id="1-5一个简单的网络来分类手写数字"><a href="#1-5一个简单的网络来分类手写数字" class="headerlink" title="1.5一个简单的网络来分类手写数字"></a>1.5一个简单的网络来分类手写数字</h3><p>定义了神经网络之后，让我们回到手写数字识别的实现。我们可以将识别手写数字的问题分成两个子问题。首先，我们想要一种将包含许多数字的图像分解为一系列单独图像的方式，每个图像都包含一个数字。例如，我们想要分解这个图片：<br><img src="/imgs2018/4_17_digits.png"><br>分成六个独立的图像，<br><img src="/imgs2018/4_17_digits_separate.png"><br>我们人类轻松地解决了这个分割问题，但是计算机程序正确分割图像是具有挑战性的。举例来说，我们希望我们的程序能够识别出上面的第一个数字，<br><img src="/imgs2018/4_17_mnist_first_digit.png"><br>是一个5。</p>
+<p>我们将着重编写一个程序来解决第二个问题，即对单个数字进行识别。我们这样做是因为事实证明，一旦你有一种很好的分类单个数字的方法，分割问题就不难解决了。有很多方法可以解决分割问题。一种方法是尝试许多不同的分割图像的方式，使用一个数字分类器对每个分割方式进行评分。如果那个数字分类器对所有数字的分类准确率都很高，则分割方式得到高分;如果分类器在一个或多个数字分类中遇到很多问题，则分数较低。这个想法是，如果分类器在某处遇到麻烦，那么可能会遇到麻烦的原因是分割选择不正确。</p>
+<p>要识别单个数字，我们将使用三层神经网络：<br><img src="/imgs2018/4_17_tikz12.png"><br>网络的输入层包含编码输入像素值的神经元。正如下一节所讨论的，我们的网络训练数据将包含许多扫描$28×28$像素的手写数字图像，因此输入层包含$784=28×28$个神经元。为了简单起见，我省略了上图中784个输入神经元中的大部分神经元。输入像素是灰度值，值为0.0表示白色，值为1.0表示黑色，在0和1之间的值表示逐渐变暗的灰色阴影。</p>
+<p>网络的第二层是一个隐藏层。我们用$n$表示隐藏层中神经元的数量，我们将尝试$n$的不同值。显示的例子是了一个小的隐藏层，只包含$n=15$个隐藏层神经元。</p>
+<p>网络的输出层包含10个神经元。如果第一个神经元触发，即输出$\approx 1$，那么这将表明网络认为该数字是0。如果第二个神经元触发，则表明网络认为该数字是1。一次类推。更精确一点，我们从0到9对输出神经元进行编号，并找出哪个神经元具有最高的激活值。如果这个神经元是第6个神经元，那么我们的网络会猜测输入数字是6。其他输出神经元亦是如此。</p>
+<p>你可能想知道为什么我们使用1010个输出神经元。毕竟，网络的目标是告诉我们输入图像对应于哪个数字$(0,1,2,\ldots 9)$。看似自然的做法是只使用4个输出神经元，根据神经元的输出是接近于0还是接近1来将每个神经元视为二进制值。四个神经元足以对答案进行编码，因为$2^4=16$比输入数字的个数10多。为什么我们的网络应该使用10个神经元呢？这不是没有效率吗？最终的理由来自于经验：我们可以尝试两种网络设计，结果发现，对于这个特定的问题，具有10个输出神经元的网络学习识别数字比具有4个输出神经元的网络更好。但是这让我们想知道为什么使用10输出神经元的效果更好。是否有一些启发式方法会提前告诉我们应该使用10个输出编码而不是4输出编码？</p>
+<p>通过理解我们为什么这样做，它有助于根据第一原则思考神经网络正在做什么。首先考虑使用10个输出神经元的情况。让我们专注于第一个输出神经元，一个试图决定数字是否为0的神经元。它通过权衡来自神经元隐藏层的证据来做到这一点。那些隐藏的神经元在干什么？很好，为了说明这一点，假设隐藏层中的第一个神经元检测是否存在如下图像：<br><img src="/imgs2018/4_17_mnist_top_left_feature.png"><br>它可以通过对与图像重叠的输入像素进行大量加权来实现，并且只对其他输入轻微加权。以类似的方式，为了论证的缘故，我们假设隐藏层中的第二，第三和第四个神经元检测是否存在以下图像：<br><img src="/imgs2018/4_17_mnist_other_features.png"><br>正如您可能已经猜到的那样，这四幅图像一起组成了我们在前面显示的数字中看到的0图像：<br><img src="/imgs2018/4_17_mnist_complete_zero.png"><br>所以如果这四个隐藏的神经元都在触发，那么我们可以得出这个数字是0的结论。当然，这不是我们可以用来得出图像是0的唯一证据，我们可以通过许多其他方式（例如，通过翻转上述图像或轻微扭曲）合理地获得0。但似乎可以肯定地说，至少在这种情况下，我们认为输入是0。<br><small>2018-04-12 22:17:33</small></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>原文:<a href="http://neuralnetworksanddeeplearning.com/chap1.html" target="_blank" rel="noopener">http://neuralnetworksanddeeplearning.com/chap1.html</a></p>
 
       
     </div>
@@ -820,7 +834,7 @@ output=\begin{cases}
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="本站字数统计">21.9k</span>
+    <span title="本站字数统计">23.3k</span>
   
 
   
