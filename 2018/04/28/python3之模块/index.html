@@ -86,7 +86,7 @@
 <meta property="og:url" content="http://www.vhcffh.com/2018/04/28/python3之模块/index.html">
 <meta property="og:site_name" content="昔日风">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-28T08:14:44.922Z">
+<meta property="og:updated_time" content="2018-05-02T02:46:15.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python3之模块">
 
@@ -394,7 +394,7 @@
                 </span>
                 
                 <span title="字数统计">
-                  256
+                  439
                 </span>
               
 
@@ -408,7 +408,7 @@
                 </span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -436,7 +436,9 @@
 <h2 id="2-2from-import语句"><a href="#2-2from-import语句" class="headerlink" title="2.2from * import语句"></a>2.2from * import语句</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from modname import name1,name2..........nameN</span><br><span class="line">from mod import func_1</span><br></pre></td></tr></table></figure>
 <p>这个声明不会把整个mod模块导入到当前命名空间中，它只会将mod里的func_1单个引入到执行这个声明的模块的全局符号表。</p>
 <p>from … import *  ：这样会把模块中的所有内容导入到当前命名空间，一般不建议使用，消耗内存空间，也容易出现未预知的问题。</p>
-<h1 id="3-搜索路径"><a href="#3-搜索路径" class="headerlink" title="3.搜索路径"></a>3.搜索路径</h1><h1 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题:"></a>其他问题:</h1><p>1.python模块里的可执行代码合适执行？<br>2.关于python模块循环引入的问题</p>
+<h1 id="3-搜索路径"><a href="#3-搜索路径" class="headerlink" title="3.搜索路径"></a>3.搜索路径</h1><p>搜索顺序：当前目录-&gt;系统环境变量PATHONHOME-&gt;标准链接库目录<br>通过<code>sys.path</code>可查看搜索路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import sys</span><br><span class="line">&gt;&gt;&gt; sys.path</span><br><span class="line">[&apos;&apos;, &apos;C:\\Python36\\python36.zip&apos;, &apos;C:\\Python36\\DLLs&apos;, &apos;C:\\Python36\\lib&apos;, &apos;C:\\Python36&apos;, &apos;C:\\Python36\\lib\\site-packages&apos;]</span><br></pre></td></tr></table></figure></p>
+<h1 id="4-命名空间"><a href="#4-命名空间" class="headerlink" title="4.命名空间"></a>4.命名空间</h1><p>变量是拥有匹配对象的名字（标识符）。命名空间是一个包含了变量名称们（键）和它们各自相应的对象们（值）的字典。<br>函数内用到全局变量要用global语句，否则会当作局部变量处理</p>
+<h1 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题:"></a>其他问题:</h1><p>1.python模块里的可执行代码何时执行？<br>当导入模块时，python顶层的代码会执行一次，若要重新执行模块的顶层代码需要通道reload()函数<br>另外python3中的reload()需要从imp包中导入<br>2.关于python模块循环引入的问题？</p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>1.<a href="https://www.cnblogs.com/zhangxinqi/p/7905103.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhangxinqi/p/7905103.html</a></p>
 
       
@@ -665,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-python3模块"><span class="nav-text">1.python3模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-模块的引入"><span class="nav-text">2.模块的引入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1import引入"><span class="nav-text">2.1import引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2from-import语句"><span class="nav-text">2.2from * import语句</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-搜索路径"><span class="nav-text">3.搜索路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他问题"><span class="nav-text">其他问题:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-python3模块"><span class="nav-text">1.python3模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-模块的引入"><span class="nav-text">2.模块的引入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1import引入"><span class="nav-text">2.1import引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2from-import语句"><span class="nav-text">2.2from * import语句</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-搜索路径"><span class="nav-text">3.搜索路径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-命名空间"><span class="nav-text">4.命名空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他问题"><span class="nav-text">其他问题:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -721,7 +723,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="本站字数统计">23.6k</span>
+    <span title="本站字数统计">23.7k</span>
   
 
   
@@ -750,16 +752,7 @@
 
 
 
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Frey</span>
-
-  <span class="with-love"><i class="fa fa-cogs"></i> <span>&nbsp;All Rights Reserved.</span></span>
-</div>
-
-
+        
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
@@ -768,8 +761,17 @@
 
 
 
-  <div class="theme-info"><a class="theme-link" target="_blank" href="https://coding.net/pages">Hosted by Coding Pages</a></div>
+  <div class="theme-info"><p style="margin: 0 0 0 0">Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p></div>
 
+
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Frey</span>
+
+  <span class="with-love"><i class="fa fa-cogs"></i> <span>&nbsp;All Rights Reserved.</span></span>
+</div>
 
 
 
