@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python中关于路径的知识]]></title>
+    <url>%2F2018%2F06%2F02%2Fpython%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%B7%AF%E5%BE%84%E7%9A%84%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[总结一下python中关于路径的一些知识点 1234567891011121314151617os.getcwd()#输出当前路径os.listdir()#输出当前路径下的所有文件夹名和文件名os.remove('filename.xxx')和os.unlink('filename.xxx')功能一样#删除文件filename.xxxos.rmdir('path')#删除目录（目录必须为空）os.removedirs('p1//p2//p3')#依次删除目录p3,p2,p1直到某一目录不为空os.chdir('path')#更改当前路径 参考资料1.https://www.cnblogs.com/yanglang/p/7610838.html2.https://blog.csdn.net/muwinter/article/details/77196261]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python类和实例的一些属性]]></title>
     <url>%2F2018%2F05%2F17%2Fpython%E7%B1%BB%E5%92%8C%E5%AE%9E%E4%BE%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%9E%E6%80%A7%2F</url>
     <content type="text"><![CDATA[对于python中self,__name__,__init__()等的解释 1,self和__init__()self代表类的实例,如下：12345678910111213141516class Test: a,b='classa','classb'#类的属性 def __init__(self): self.b='selfb'#实例的属性 self.c='selfc'print(Test.a)print(Test.b)#-output:classa classb-访问类的属性a=Test()print(a.a)#-output:classa-通过实例访问类的属性print(a.b)#-output:selfb-当实例和类都具有某属性时,输出实例属性print(a.c)print(Test.c)#output 当实例和类有相同的属性时，如何通过实例访问类的属性呢？可以通过__class__访问 2,__class____class__是指实例所对应的类1234567891011121314151617# -*- coding: utf-8 -*-class Test: a='classa' print(count) def __init__(self): self.a='selfa' print(self) #-output:&lt;__main__.Test object at 0x055A1270&gt; print(self.__class__) #-output:&lt;class '__main__.Test'&gt;a=Test()print('实例a',a)#-output:&lt;__main__.Test object at 0x055A1270&gt;print('类Test',Test)#-output:&lt;class '__main__.Test'&gt;print(a.a,a.__class__.a)#-output:selfa classa 通过__init__()可以实现对类的实例的统计12345678910111213# -*- coding: utf-8 -*-class Test(object): count=0 def __init__(self): super(Test, self).__init__() self.__class__.count+=1if __name__=="__main__": a=Test() print(Test.count) b=Test() print(Test.count) Test() print(Test.count) 输出为123123 每创建一个Test类的实例,Test.count都加1 3,__dict____dict__是一个字典，键是属性名，值为属性值。类有自己的__dict__，类的实例也有自己的__dict__12345678910# -*- coding: utf-8 -*-class Test(object): classa='classa' def __init__(self): super(Test, self).__init__() self.selfb='selfb'if __name__=="__main__": print(Test.__dict__) a=Test() print(Test.__dict__) 输出为12&#123;&apos;__module__&apos;: &apos;__main__&apos;, &apos;classa&apos;: &apos;classa&apos;, &apos;__init__&apos;: &lt;function Test.__init__ at 0x04D03468&gt;, &apos;__dict__&apos;: &lt;attribute &apos;__dict__&apos; of &apos;Test&apos; objects&gt;, &apos;__weakref__&apos;: &lt;attribute &apos;__weakref__&apos; of &apos;Test&apos; objects&gt;, &apos;__doc__&apos;: None&#125;&#123;&apos;selfb&apos;: &apos;selfb&apos;&#125; 可见类Test有classa属性以及一些其他属性类Test的实例a只有selfb属性2018-05-23 14:54:58 参考资料1,https://docs.python.org]]></content>
