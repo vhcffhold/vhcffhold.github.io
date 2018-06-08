@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[git的使用]]></title>
+    <url>%2F2018%2F06%2F08%2Fgit%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[git的一些命令配置用户名和邮箱12git config --global user.name "username"git config --global user.emil "useremil@xxx.com" 生成密钥-t rsa```12添加远程仓库```git remote add origin git@github.com:name/reponame.git 参考资料1.https://blog.csdn.net/csdn_blog_lcl/article/details/53172885]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python中关于路径的知识]]></title>
     <url>%2F2018%2F06%2F02%2Fpython%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%B7%AF%E5%BE%84%E7%9A%84%E7%9F%A5%E8%AF%86%2F</url>
     <content type="text"><![CDATA[总结一下python中关于路径的一些知识点 1234567891011121314151617os.getcwd()#输出当前路径os.listdir()#输出当前路径下的所有文件夹名和文件名os.remove('filename.xxx')和os.unlink('filename.xxx')功能一样#删除文件filename.xxxos.rmdir('path')#删除目录（目录必须为空）os.removedirs('p1//p2//p3')#依次删除目录p3,p2,p1直到某一目录不为空os.chdir('path')#更改当前路径 参考资料1.https://www.cnblogs.com/yanglang/p/7610838.html2.https://blog.csdn.net/muwinter/article/details/77196261]]></content>
