@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[git的使用]]></title>
     <url>%2F2018%2F06%2F08%2Fgit%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[git的一些命令配置用户名和邮箱12git config --global user.name "username"git config --global user.emil "useremil@xxx.com" 生成密钥-t rsa```12添加远程仓库```git remote add origin git@github.com:name/reponame.git 参考资料1.https://blog.csdn.net/csdn_blog_lcl/article/details/53172885]]></content>
+    <content type="text"><![CDATA[git的一些命令配置用户名和邮箱12git config --global user.name "username"git config --global user.emil "useremil@xxx.com" 生成密钥ssh-keygen -t rsa添加远程仓库git remote add origin git@github.com:name/reponame.git 参考资料1.https://blog.csdn.net/csdn_blog_lcl/article/details/53172885]]></content>
       <categories>
         <category>Linux</category>
       </categories>
