@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.vhcffh.com/about/index.html</loc>
+    
+    <lastmod>2018-06-08T10:19:44.068Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.vhcffh.com/2018/06/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2018-06-08T10:04:37.788Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://www.vhcffh.com/2018/06/02/python%E4%B8%AD%E5%85%B3%E4%BA%8E%E8%B7%AF%E5%BE%84%E7%9A%84%E7%9F%A5%E8%AF%86/</loc>
     
     <lastmod>2018-06-02T09:02:21.791Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.vhcffh.com/about/index.html</loc>
-    
-    <lastmod>2018-06-01T07:36:02.631Z</lastmod>
     
   </url>
   
