@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[vim的使用]]></title>
+    <url>%2F2018%2F06%2F23%2Fvim%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[1.光标移动h,j,k,l(空格):向左，下，上，右移动光标Ctrl+(f,b,d,u):屏幕向下移一页，向上移一页，向下移半页，向上移半页+-:下一行，上一行H,M,L:光标移动到这个屏幕的最上方，中央，最下方那一行的第一个字符G,nG,gg:移动都文档末，移动到第n行，移动到第一行n:向下移动n行 2.搜索替换/word:向光标之下寻找word?word:向光标之上寻找wordn,N:重复搜索（不变方向，改变方向） 参考资料1.http://www.runoob.com/linux/linux-vim.html]]></content>
+      <categories>
+        <category>软件使用</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[git的使用]]></title>
     <url>%2F2018%2F06%2F08%2Fgit%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[git的一些命令配置用户名和邮箱12git config --global user.name "username"git config --global user.emil "useremil@xxx.com" 生成密钥ssh-keygen -t rsa添加远程仓库git remote add origin git@github.com:name/reponame.git 参考资料1.https://blog.csdn.net/csdn_blog_lcl/article/details/53172885]]></content>
