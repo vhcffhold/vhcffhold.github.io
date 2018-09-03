@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://www.vhcffh.com/2018/04/07/%E4%BD%BF%E7%94%A8%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97-%E8%AF%91/</loc>
+    <lastmod>2018-09-03T09:59:35.153Z</lastmod>
+    <data>
+        <display>
+        <title>使用神经网络识别手写数字[译]</title>
+        <pubTime>2018-04-07T09:45:48.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>神经网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://www.vhcffh.com/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>http://www.vhcffh.com/2018/06/23/vim%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2018-08-31T10:03:17.813Z</lastmod>
     <data>
@@ -23,7 +46,6 @@
     </url>
 
     
-    
   <url>
     <loc>http://www.vhcffh.com/2018/06/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2018-06-08T10:04:37.788Z</lastmod>
@@ -38,28 +60,6 @@
            
              
               <breadCrumb title="Linux" url="http://www.vhcffh.com/categories/Linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.vhcffh.com/2018/04/07/%E4%BD%BF%E7%94%A8%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AF%86%E5%88%AB%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97-%E8%AF%91/</loc>
-    <lastmod>2018-06-03T05:41:21.143Z</lastmod>
-    <data>
-        <display>
-        <title>使用神经网络识别手写数字[译]</title>
-        <pubTime>2018-04-07T09:45:48.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>神经网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="http://www.vhcffh.com/categories/Python/"/>
           
         </display>
     </data>
