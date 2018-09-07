@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python中遇到的错误1]]></title>
+    <url>%2F2018%2F09%2F07%2Fpython%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%94%99%E8%AF%AF%2F</url>
+    <content type="text"><![CDATA[使用python过程中遇到的错误 1.使用libsvm for python时出错1234567891011121314151617Traceback (most recent call last): File &quot;C:\Python36\lib\libsvm\python\svm.py&quot;, line 28, in &lt;module&gt; libsvm = CDLL(path.join(dirname, r&apos;..\windows\libsvm.dll&apos;)) File &quot;C:\Python36\lib\ctypes\__init__.py&quot;, line 348, in __init__ self._handle = _dlopen(self._name, mode)OSError: [WinError 126] 找不到指定的模块。During handling of the above exception, another exception occurred:Traceback (most recent call last): File &quot;train.py&quot;, line 3, in &lt;module&gt; from libsvm.python.svmutil import * File &quot;C:\Python36\lib\libsvm\python\svmutil.py&quot;, line 5, in &lt;module&gt; from svm import * File &quot;C:\Python36\lib\libsvm\python\svm.py&quot;, line 38, in &lt;module&gt; raise Exception(&apos;LIBSVM library not found.&apos;)Exception: LIBSVM library not found. 出错原因：在github上下载的libsvm中的libsvm.lib是win64版本的，而自己的python版本是32位的解决方案：方法1.更换python版本（太麻烦了，还要重新下载好多库）方法2.去万能宝库上下载对应版本的.whl文件，（不用安装）直接解压后找到libsvm.lib更换即可 2018-09-07 22:11:58 参考资料1.https://blog.csdn.net/rena521/article/details/51187981]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>libsvm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[vim的使用]]></title>
     <url>%2F2018%2F06%2F23%2Fvim%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[1.光标移动h,j,k,l(空格):向左，下，上，右移动光标Ctrl+(f,b,d,u):屏幕向下移一页，向上移一页，向下移半页，向上移半页+-:下一行，上一行H,M,L:光标移动到这个屏幕的最上方，中央，最下方那一行的第一个字符G,nG,gg:移动都文档末，移动到第n行，移动到第一行n:向下移动n行 2.搜索替换/word:向光标之下寻找word?word:向光标之上寻找wordn,N:重复搜索（不变方向，改变方向） 参考资料1.http://www.runoob.com/linux/linux-vim.html]]></content>
@@ -121,8 +133,8 @@
         <category>算法总结</category>
       </categories>
       <tags>
-        <tag>C语言</tag>
         <tag>算法</tag>
+        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
@@ -144,8 +156,8 @@
         <category>算法总结</category>
       </categories>
       <tags>
-        <tag>C语言</tag>
         <tag>算法</tag>
+        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
@@ -350,13 +362,13 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>centos</tag>
-        <tag>搬瓦工</tag>
         <tag>apache</tag>
         <tag>php</tag>
         <tag>mysql</tag>
         <tag>web</tag>
         <tag>服务器</tag>
+        <tag>centos</tag>
+        <tag>搬瓦工</tag>
       </tags>
   </entry>
   <entry>
