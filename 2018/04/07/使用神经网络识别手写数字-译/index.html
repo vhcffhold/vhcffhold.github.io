@@ -80,13 +80,13 @@
 
 
 
-<meta name="description" content="使用神经网络识别手写数字">
+<meta name="description" content="使用神经网络识别手写数字python版本:python2">
 <meta name="keywords" content="python,神经网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用神经网络识别手写数字[译]">
 <meta property="og:url" content="http://www.vhcffh.com/2018/04/07/使用神经网络识别手写数字-译/index.html">
 <meta property="og:site_name" content="昔日风">
-<meta property="og:description" content="使用神经网络识别手写数字">
+<meta property="og:description" content="使用神经网络识别手写数字python版本:python2">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.vhcffh.com/imgs2018/4_17_digits.png">
 <meta property="og:image" content="http://www.vhcffh.com/imgs2018/4_17_mnist_100_digits.png">
@@ -114,10 +114,11 @@
 <meta property="og:image" content="http://www.vhcffh.com/imgs2018/9_9_tikz13.png">
 <meta property="og:image" content="http://www.vhcffh.com/imgs2018/4_17_digits.png">
 <meta property="og:image" content="http://www.vhcffh.com/imgs2018/9_9_valley.png">
-<meta property="og:updated_time" content="2018-09-09T12:12:48.167Z">
+<meta property="og:image" content="http://www.vhcffh.com/imgs2018/9_13_valley_with_ball.png">
+<meta property="og:updated_time" content="2018-09-13T13:45:55.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用神经网络识别手写数字[译]">
-<meta name="twitter:description" content="使用神经网络识别手写数字">
+<meta name="twitter:description" content="使用神经网络识别手写数字python版本:python2">
 <meta name="twitter:image" content="http://www.vhcffh.com/imgs2018/4_17_digits.png">
 
 
@@ -444,7 +445,7 @@
                 </span>
                 
                 <span title="字数统计">
-                  11,787
+                  17,760
                 </span>
               
 
@@ -458,7 +459,7 @@
                 </span>
                 
                 <span title="阅读时长">
-                  41
+                  63
                 </span>
               
             </div>
@@ -479,7 +480,7 @@
       
 
       
-        <h1 id="使用神经网络识别手写数字"><a href="#使用神经网络识别手写数字" class="headerlink" title="使用神经网络识别手写数字"></a>使用神经网络识别手写数字</h1><a id="more"></a>
+        <h1 id="使用神经网络识别手写数字"><a href="#使用神经网络识别手写数字" class="headerlink" title="使用神经网络识别手写数字"></a>使用神经网络识别手写数字</h1><p>python版本:python2<br><a id="more"></a></p>
 <h2 id="1-第一章"><a href="#1-第一章" class="headerlink" title="1.第一章"></a>1.第一章</h2><p>人类的视觉系统是世界的奇迹之一，考虑如下的一串手写数字：<br><img src="/imgs2018/4_17_digits.png"><br>大多数人毫不费力地将这些数字识别为504192。这种安逸是骗人的，在我们大脑的每个半球，人类都有一个主要的视觉皮层，也被称为$V_1$，含有1.4亿个神经元，它们之间有数以百亿计的联系。而且，人类视觉不仅涉及$V_1$，还涉及到整个系列的视觉皮质 - $V_2$，$V_3$，$V_4$和$V_5$ - 逐渐进行更复杂的图像处理。我们的大脑中有一台超级计算机，根据数亿年的演变进行调整，并且非常适合了解视觉世界。识别手写数字并不容易。相反，我们人类是惊人的，非常擅长理解我们的眼睛向我们展示的东西。但几乎所有这些工作都是在无意识中完成的。所以我们通常不会意识到我们的视觉系统解决问题有多复杂。<br>如果您尝试编写计算机程序来识别上述数字，则视觉模式识别的难度就会变得明显。对于我们自己来说非常简单的事突然变得非常困难。关于我们如何识别形状的简单直觉 ——“一个9在顶部有一个循环，而在右下方有一个垂直的冲程” ——在算法上表达的结果并不是那么简单。当你试图精确地制定这样的规则时，你很快会迷失在例外和警告以及特殊情况之中。它似乎毫无希望。</p>
 <p>神经网络用另一种方式解决这个问题。这个想法是采取大量的手写数字，称为训练示例，<br><img src="/imgs2018/4_17_mnist_100_digits.png"><br>然后开发一个可以从这些训练示例中学习的系统。换句话说，神经网络使用这些例子来自动推断识别手写数字的规则。此外，通过增加训练示例的数量，网络可以了解更多关于手写的内容，从而提高其准确性。所以，虽然我只显示了上面的100个训练数字，但也许我们可以使用数千甚至数百万或数十亿个训练示例来构建更好的手写识别器。在本章中，我们将编写一个计算机程序，实现一个学习识别手写数字的神经网络。该程序只有74行，并且不使用特殊的神经网络库。但是这个简短的程序识别数字的准确率超过96％，且无需人工干预。此外，在后面的章节中，我们将开发出将精度提高到99％以上的想法。事实上，最好的商业神经网络现在非常好，银行用它来处理支票，邮局用它来识别地址。</p>
 <p>我们专注于手写识别，因为它对于一般学习神经网络来说是一个很好的原型问题。作为原型，它迎来了一个甜蜜点：它很具有挑战性 - 识别手写数字并不是一件容易的事情 - 但它并不是一个非常复杂的解决方案或者巨大的计算能力。此外，这是开发深度学习等更先进技术的好方法。因此，在整本书中，我们会一再回顾手写识别的问题。在本书后面，我们将讨论如何将这些想法应用于计算机视觉中的其他问题，以及语音，自然语言处理和其他领域。</p>
@@ -501,7 +502,7 @@ output=\begin{cases}
 output=\begin{cases}
 0 & \text{如果$ w\cdot x\le阈值 $}\\
 1 & \text{如果$ w\cdot x\gt阈值 $}
-\end{cases}\tag{2}</script><p>你可以将偏置看作衡量感知器输出1的容易程度。或者用更多的生物学术语来说，偏置是衡量让感知器触发的容易程度。对于具有非常大偏置的感知器，感知器输出1是非常容易的。但是如果偏置非常小，那么感知器很难输出1。显然，引入偏置只是我们描述感知器的一个小变化，但是我们稍后会看到它会导致进一步的符号简化。因此，在本书的其余部分我们不会使用阈值，我们将始终使用偏置。</p>
+\end{cases}\tag{2}\label{(2)}</script><p>你可以将偏置看作衡量感知器输出1的容易程度。或者用更多的生物学术语来说，偏置是衡量让感知器触发的容易程度。对于具有非常大偏置的感知器，感知器输出1是非常容易的。但是如果偏置非常小，那么感知器很难输出1。显然，引入偏置只是我们描述感知器的一个小变化，但是我们稍后会看到它会导致进一步的符号简化。因此，在本书的其余部分我们不会使用阈值，我们将始终使用偏置。</p>
 <p>我将感知器描述为衡量证据作出决定的一种方法。另一种可以使用感知器的方法是计算我们通常认为是最基础的基本逻辑函数（与，或，与非）。例如，假设我们有一个有两个输入的感知器，每个输入的权重是-2，和一个整体的偏置3，下图是我们的感知器：<br><img src="/imgs2018/4_17_tikz2.png"><br>然后我们将看到输入[0,0]时，输出1，因为$(-2)\ast 0+(-2)\ast 0+3=3$是正数。在这里，引入$\ast$作为乘号。类似的计算能显示输入[0,1]和[1,0]会输出1.但是输入[1,1]将输出0。因此我们的感知器实现了与非门。</p>
 <p>与非门示例显示我们可以使用感知器来计算简单的逻辑函数。实际上，我们可以使用感知器网络来计算任何逻辑函数。原因在于与非门是计算通用的，也就是说，我们可以在与非门外建立任何计算。例如，我们可以使用与非门来构建一个电路，该电路添加两个位$x_1$和$x_2$。若需要计算按位和，$x_1\oplus x_2$，以及当$x_1$和$x_2$都是1时进位位被设置为1，即进位位是位乘积$x_1x_2$：<br><img src="/imgs2018/4_17_tikz3.png"><br>为了获得感知器的等效网络，我们用感知器替换所有与非门，其中两个输入的权重均为-2，整体偏差为3。<br><img src="/imgs2018/4_17_tikz4.png"><br>这个感知器网络的一个值得注意的方面是，最左感知器的输出被用作最下感知器的双重输入。当我定义感知器模型时，我没有说是否允许这种双重输出到同一个地方。其实，这并不重要。如果我们不想允许这样的事情，那么可以简单地将这两条线合并成一个权重为-4的单一连接，而不是两个具有-2权重的连接。（如果你没有发现这一点，你应该停下来向自己证明这是相同的。）随着这种变化，网络看起来如下所示，所有未标记的权重等于-2，所有偏差等于3，单个权重为-4，如下所示：<br><img src="/imgs2018/4_17_tikz5.png"><br>到目前为止，我一直在绘制像$x_1$和$x_2$这样的输入作为感知器网络左侧的变量。事实上，传统的做法是绘制额外的感知层-输入层-对输入进行编码：<br><img src="/imgs2018/4_17_tikz6.png"><br>输入感知器的这种表示法，其中有输出，但没有输入，<br><img src="/imgs2018/4_17_tikz7.png"><br>上图是一个简写。它实际上并不意味着是没有输入的感知器。要看到这个，假设我们确实有一个没有输入的感知器。那么加权总和$\sum_jw_jx_j$总是为零，所以对于感知器，当$b\gt0$将输出1，当$b\le0$则输出0。也就是说，感知器只会输出一个固定的值，而不是所需的值（在上面的例子中是$x_1$）。最好将输入感知器视为不是真正的感知器，而是将特定的单位简单地定义为输出所需的值$x_1,x_2,x_3\ldots$</p>
 <p>加法器实例演示了如何使用感知器网络来模拟包含许多与非门的电路。由于与非门在计算上是通用的，因此感知器对于计算也是普遍的。</p>
@@ -514,7 +515,7 @@ output=\begin{cases}
 <script type="math/tex; mode=display">
 \sigma(z)\equiv{1 \over {1+e^{-z}}}\tag{3}\label{(3)}</script><p>为了更清楚地说明，具有输入$x_1,x_2,\ldots,$权重$w_1,w_2,\ldots,$的sigmoid神经元的偏置$b$为：</p>
 <script type="math/tex; mode=display">
-{1 \over 1+exp({-\sum_jw_jx_j-b})}\tag{4}</script><p>乍一看，sigmoid神经元与感知器显得非常不同。如果你不熟悉sigmoid函数的代数形式，会感觉晦涩难以理解。事实上，在sigmoid神经元和感知器之间有许多相似之处，而sigmoid函数的代数形式更像一个技术细节，而不是真正的理解障碍。</p>
+{1 \over 1+exp({-\sum_jw_jx_j-b})}\tag{4}\label{(4)}</script><p>乍一看，sigmoid神经元与感知器显得非常不同。如果你不熟悉sigmoid函数的代数形式，会感觉晦涩难以理解。事实上，在sigmoid神经元和感知器之间有许多相似之处，而sigmoid函数的代数形式更像一个技术细节，而不是真正的理解障碍。</p>
 <p>为了理解它与感知器模型的相似之处，假设$z\equiv w\cdot x + b$是一个很大的正数，那么$e^{-z}\approx 0$，因此$sigma(z)\approx 1$。总之，当$z\equiv w\cdot x + b$是大的正数时，sigmoid神经元的输出接近1。就像一个感知器一样。相反，假设$z\equiv w\cdot x + b$是非常小的负数，那么$e^{-z}\to \infty$，而且$sigma(z)\approx 0$。因此当$z\equiv w\cdot x + b$是很小的负数时，sigmoid神经元的行为也接近一个感知器。只有当$ w\cdot x + b$的大小适中它的行为才会与感知器模型有很大区别。</p>
 <p>关于$\sigma$函数的代数形式，我们应该怎样理解？事实上，$\sigma$的确切形式并不重要—重要的是这个函数的图形。下图是它的图形：<br><img src="/imgs2018/4_17_sigmoid_graph.PNG"><br>这个形状是一个平滑的阶梯函数版本：<br><img src="/imgs2018/4_17_step_graph.PNG"><br>事实上，如果$\sigma$函数是一个阶梯函数那么sigmoid神经元将是一个感知器，因为此时的输出0或者1取决于$w\cdot x+b$是正是负。如上所述，通过使用实际的$\sigma$函数，我们可以得到一个平滑的感知器。的确，$\sigma$函数的平滑性是至关重要的事实，而不是其详细的形式。$\sigma$函数的平滑性意味着权重的一个小变化$\Delta w_j$和偏置的小变化$\Delta b_j$在神经元的输出上也产生一个小变化$\Delta output$。事实上，通过微积分我们可以知道$\Delta output$很接近：</p>
 <script type="math/tex; mode=display">
@@ -562,8 +563,92 @@ C(w,b)\equiv \frac {1}{2n}\sum_x{||y(x)-a||}^2\tag{6}\label{(6)}</script><p>这�
 <script type="math/tex; mode=display">
     \Delta C\approx 
     \frac{\partial C}{\partial v_1}\Delta v_1+
-    \frac{\partial C}{\partial v_2}\Delta v_2.
-    \tag{7}\label{(7)}</script><p><small>2018-09-09 20:05:12</small></p>
+    \frac{\partial C}{\partial v_2}\Delta v_2
+    \tag{7}\label{(7)}</script><p><small>2018-09-09 20:05:12</small><br>我们将设法选择 $\Delta v_1$ 和 $\Delta v_2$ 以确保 $\Delta C$ 是负数，换句话说，我们将通过选择 $\Delta v_1$ 和 $\Delta v_2$ 以确保小球是向着谷底的方向滚动的。为了弄清楚该怎样选择 $\Delta v_1$ 和 $\Delta v_2$，我们定义一个描述 $v$ 改变的矢量 $\Delta v \equiv (\Delta v_1, \Delta v_2)^T$，这里的 $T$ 同样是 转置（transpose）算符，用来将一个行矢量转化为列矢量。我们还将定义 $C$ 的“梯度”，它是由 $C$ 的偏导数构成的矢量，$\left(\frac{\partial C}{\partial v_1}, \frac{\partial C}{\partial v_2}\right)^T$ 。我们将“梯度”矢量记为 $\nabla C$，即：</p>
+<script type="math/tex; mode=display">
+    \nabla C\equiv 
+    \left(
+    \frac{\partial C}{\partial v_1},
+    \frac{\partial C}{\partial v_2}
+    \right)^T
+    \tag{8}\label{(8)}</script><p>很快我们将会用 $\Delta v$ 和梯度 $\nabla C$ 来重写 $\Delta C$ 的表达式。在这之前，为了避免读者可能对“梯度”产生的困惑，我想再多做一点解释。当人们首次碰到$\nabla C$这个记号的时候，可能会想究竟该怎样看待$\nabla$这个符号。$\nabla$的含义到底是什么？其实，我们完全可以把$\nabla C$整体看作是单一的数学对象——按照上述公式定义的矢量，仅仅是偶然写成了用两个符号标记的形式。根据这个观点，$\nabla$像是一种数学形式的旗语，来提醒我们“嘿，$\nabla C$是一个梯度矢量”，仅此而已。当然也有更抽象的观点，在这种观点下，$\nabla$被看作是一个独立的数学实体（例如，被看作一个微分算符），不过我们这里没有必要采用这种观点。<br>使用上述定义，$\Delta C$ 的表达式 (7) 可以被重写为：</p>
+<script type="math/tex; mode=display">
+    \Delta C\approx
+    \nabla C \cdot \Delta v
+    \tag{9}\label{(9)}</script><p>这个方程有助于我们理解为什么 $\nabla C$ 被称为“梯度”矢量：$\nabla C$ 将 $v$ 的改变和 $C$ 的改变联系在了一起，而这正是我们对于“梯度”这个词所期望的含义。然而，真正令我们兴奋的是这个方程让我们找到一种 $\Delta v$ 的选择方法可以确保 $\Delta C$ 是负的。具体来说，如果我们选择 </p>
+<script type="math/tex; mode=display">
+    \Delta v=-\eta \nabla C
+    \tag{10}\label{(10)}</script><p>这里 $\eta$ 是一个正的小参数，被称为“学习率”（learning rate)。那么由方程$\color{lime}{\eqref{(9)}}$可知$\Delta C \approx -\eta \nabla C \cdot \nabla C = -\eta ||\nabla C||^2$。如果我们根据公式$\color{lime}{\eqref{(10)}}$指定 $v$ 的改变，由于 $|| \nabla C ||^2 \geq 0$ ，它确保了 $\Delta C \leq 0$，即 $C$ 的值将一直减小，不会反弹。（当然要在近似关系$\color{lime}{\eqref{(9)}}$ ) 成立的范围内）。这正是我们期望的性质！因此，我们将在梯度下降算法（gradient descent algorithm）中用公式 $\color{lime}{\eqref{(10)}}$来定义小球的“运动定律”。也就是说，我们将用公式$\color{lime}{\eqref{(10)}}$来计算 $\Delta v$ 的值，然后将小球的位置 $v$ 移动一小步：</p>
+<script type="math/tex; mode=display">
+    v \to v'=v - \eta \nabla C
+    \tag{11}\label{(11)}</script><p>然后，我们使用这一规则再将小球移动一小步。如果我们不断这样做，$C$ 将不断减小，符合期望的话，$C$ 将一直减小到全局最小值。</p>
+<p>总之，梯度下降算法（gradient descent algorithm）是通过不断计算梯度$\nabla C$，然后向着梯度相反的方向小步移动的方式让小球不断顺着坡面滑向谷底。这个过程可以形象地用下图表示：<br><img src="/imgs2018/9_13_valley_with_ball.png"><br>注意：采用这一规则，梯度下降算法并没有模拟真实的物理运动。在现实世界，小球具有动量，而动量可能让小球偏离最陡的下降走向，甚至可以让其暂时向着山顶的方向逆向运动。只有考虑了摩擦力的作用，才能确保小球是最终落在谷底的。但这里，我们选择$\Delta v$的规则却是说“立马给我往下滚”，而这个规则仍然是寻找最小值的一个好方法！</p>
+<p>为了让“梯度下降法”能够正确发挥作用，我们必须选择一个足够小的“学习率” $\eta$ 以确保方程$\color{lime}{\eqref{(9)}}$是一个好的近似。如果我们不这样做，最终可能会导致 $\Delta C &gt; 0$，这当然不是我们想要的。与此同时，我们也不希望 $\eta$ 太小，因为η太小的话每一步的 $\Delta v$ 就会非常小, 从而导致梯度下降算法的效率非常低。在实际运用过程中，$\eta$经常是变化的从而确保不仅方程$\color{lime}{\eqref{(9)}}$是好的近似，而且算法也不会太慢。后面我们将会理解具体的做法。</p>
+<p>前面我们已经解释了当函数 $C$ 仅仅依赖两个变量时的梯度下降算法。但其实，当 $C$ 依赖更多变量的时候，前面所有的论述依然成立。具体来说，假设函数 $C$ 依赖$m$个变量， $v_1,\ldots,v_m$，那么由微小改变 $\Delta v = (\Delta v_1, \ldots, \Delta v_m)^T$ 引起的 $C$ 的变化$\Delta C$是: </p>
+<script type="math/tex; mode=display">
+    \Delta C\approx
+    \nabla C\cdot \Delta v
+    \tag{12}\label{(12)}</script><p>这里梯度矢量 $\nabla C$ 定义为:</p>
+<script type="math/tex; mode=display">
+    \nabla C\equiv
+    \left(
+    \frac{\partial C}{\partial v_1},\ldots ,\frac{\partial C}{\partial v_m}
+    \right)^T
+    \tag{13}\label{(13)}</script><p>类似于两个自变量的情形，我们可以选择 </p>
+<script type="math/tex; mode=display">
+    \Delta v=-\eta \nabla C
+    \tag{14}\label{(14)}</script><p>那么就可以确保由公式$\color{lime}{\eqref{(12)}}$得到的 $\Delta C$ 是负的。这给了我们一种沿着梯度找到最小值的方法，即使 $C$ 依赖于很多变量。即通过不断重复地使用以下更新规则，</p>
+<script type="math/tex; mode=display">
+    v \to v'=v - \eta \nabla C
+    \tag{15}\label{(15)}</script><p>你可以把这种更新规则看作是“梯度下降算法”的定义。它给了我们一种不断改变 $v$ 的位置从而找到函数 $C$ 最小值的方法。这一规则并不总是有效——有些情况可能会导致出错，阻止梯度下降算法找到 $C$ 的全局最小值。在后面的章节我们会回过头来讨论这种可能性。不过，在实际应用中，梯度下降算法常常非常有效，并且在神经网络中，我们发现它也是一种最小化代价函数（cost function）的强有力方法，因此也有助于神经网络的学习。</p>
+<p>的确，从某种意义上说梯度下降其实是寻找最小值的最佳策略。假设我们正试图通过移动一小步 $\Delta v$ 来让函数 $C$ 尽可能地减小。这等价于要要最小化 $\Delta C \approx \nabla C \cdot \Delta v$。我们将限定移动步幅的大小，即令 $|| \Delta v || = \epsilon$ 其中 $\epsilon &gt; 0$ 是一个固定的小量. 换句话说，我们想移动步长限定的一小步，并试图找到一个移动方向能够让C尽可能减小。可以证明这里最小化$\nabla C \cdot \Delta v$的$\Delta v$选择是 $\Delta v = - \eta \nabla C$, 这里 $\eta = \epsilon / ||\nabla C||$ 是由步长约束 $||\Delta v|| = \epsilon$ 所要求的。因此梯度下降可以被认为是一种沿着 $C$ 局域下降最快的方向一步一步向前走，从而找到最小值的方法。</p>
+<p><strong>练习</strong><br>1.证明上面最后一段的断言。提示：如果你还不熟悉柯西-施瓦茨不等式，你最好学习一下，这会对你很有帮助。</p>
+<p>2.我们阐述当$C$有两个变量时的梯度下降，也阐述了超过两个变量的梯度下降。当$C$只有一个变量时候，会发生什么呢？你能提供在一个维度上梯度下降的几何解释吗？</p>
+<p>人们调研过很多从梯度下降变种而来的算法，包括精确模仿小球在真实物理世界运动的方法。这些模仿小球真实物理运动的方法有一些优点，但是也有一个显著的缺点：需要计算 $C$ 的二阶偏导数，而那样的话，计算成本会很高。为了看清楚为什么计算成本会很高，假设我们要计算所有的二阶偏导数 $\partial^2 C/ \partial v_j \partial v_k$。 如果这里需要计算的 $v_j$ 变量有一百万个，我们就要计算大概万亿（百万的平方）量级的二阶偏导数。这个计算成本非常高。 正因为上面所说的，人们搞出不少小技巧来避免计算成本过高的问题，同时，寻找梯度下降的替代算法也是非常活跃的研究领域。不过，本书将始终把梯度下降（及其变种）算法作为我们训练神经网络的主要方法。</p>
+<p>我们怎样把梯度下降应用于神经网络的学习过程呢？具体思路是用梯度下降来寻找权重（weights）$w_k$ 和 偏移（bias） $b_l$ ，从而最小化代价函数$\color{lime}{\eqref{(6)}}$。为了看得更清楚，我们将梯度下降更新规则中的变量$v_j$用权重和偏移替换，进行重新表述。换句话说，我们现在的“位置”有 $w_k$ 和 $b_l$ 这些分量, 而梯度矢量 $\nabla C$ 也具有相应的分量 $\partial C / \partial w_k$ 和 $\partial C / \partial b_l$。将梯度下降规则用这些分量的形式写出来，我们有</p>
+<script type="math/tex; mode=display">
+    w_k \to w_k'=w_k - \eta \frac{\partial C}{\partial w_k}
+    \tag{16}\label{(16)}</script><script type="math/tex; mode=display">
+    b_l \to b_l'=b_l - \eta \frac{\partial C}{\partial b_l}
+    \tag{17}\label{(17)}</script><p>通过不断重复应用这一更新规则，我们可以“从山上滚下来”，符合预期的话，我们将找到代价函数的最小值。换句话说，这个规则可以用于神经网络的学习过程。</p>
+<p>在运用梯度下降规则的时候会碰到许多挑战难题。在后面的章节我们会仔细研究这些困难。但这里我只想提及其中的一个难题。为了更好地理解是什么难题，让我们回过头来看一下公式$\color{lime}{\eqref{(6)}}$定义的二次型代价函数。注意到这个代价函数具有形式$C = \frac{1}{n} \sum_x C_x$, 即，每一个训练样例误差 $C_x \equiv \frac{||y(x)-a||^2}{2}$ 的平均。实际上，为了计算梯度 $\nabla C$ ，我们需要对每个训练输入（trainning input）分别计算其梯度 $\nabla C_x$，然后再对它们求平均。不幸的是，如果训练输入的样本数量非常大，那么这样会消耗很多时间，因此导致神经网络的学习过程非常慢。</p>
+<p>有一个可用于加速学习过程的办法被称作 “随机梯度下降”（stochastic gradient descent）。 这个办法是通过随机选择训练输入的少量样本，并只计算这些样本的$\nabla C_x$的平均值来估算梯度 $\nabla C$。通过计算这些少量样本的平均值，我们可以很快估算出梯度$\nabla C$的真实值，从而加速梯度下降过程，即加速神经网络的学习过程。</p>
+<p>具体来说， 首先“随机梯度下降” 要随机挑出 $m$（一个较小的数目）个训练输入。我们将这些随机的训练输入标记为 $X_1,X_2…X_m$, 并将它们称为 一个 “小组”（mini-batch）。假设样本数$m$足够大，我们预计这个随机小组 $\nabla C_{X_j}$ 的平均值应该和所有 $\nabla C_x$ 的平均值大致相等，即</p>
+<script type="math/tex; mode=display">
+    \frac{\sum_{j=1}^m\nabla C_{X_j}}{m}  
+    \approx \frac{\sum_x\nabla C_x}{n} 
+    = \nabla C
+    \tag{18}\label{(18)}</script><p>这里第二个求和符号表示对整个训练数据集的求和。交换等号两边的顺序，我们有</p>
+<script type="math/tex; mode=display">
+    \nabla C \approx \frac{1}{m}\sum_{j=1}^{m}\nabla C_{X_j}
+    \tag{19}\label{(19)}</script><p>这个公式明确了我们可以通过仅仅计算随机选择的“小组”梯度来估算整体的梯度值。</p>
+<p>为了将其和神经网络的学习过程直接联系起来，假设我们用 $w_k$ 和 $b_l$ 标记神经网络中的权重（weights）和 偏移（biases），那么随机梯度下降的工作方式为：随机挑出一“小组”训练输入，并用如下方式来训练</p>
+<script type="math/tex; mode=display">
+    w_k \to w_k'=w_k - 
+    \frac{\eta}{m} 
+    \sum_j\frac{\partial C_{X_j}}{\partial w_k}
+    \tag{20}\label{(20)}</script><script type="math/tex; mode=display">
+    b_l \to b_l'=b_lk - 
+    \frac{\eta}{m} 
+    \sum_j\frac{\partial C_{X_j}}{\partial b_l}
+    \tag{21}\label{(21)}</script><p>这里的求和是对当前小组里的所有训练样本 $X_j$ 进行的。然后我们再随机挑出另一小组进行训练。如此反复下去，直到我们用尽了所有的训练输入。这个过程被称为完成了一“代”（epoch）训练。到那个时候，我们就可以重新开始另一代训练。</p>
+<p>有的时候，我们需要注意：人们在标定代价函数(cost function)和对权重、偏移进行“组”(mini-batch)更新时所采用的惯例可能有所差异。公式$\color{lime}{\eqref{(6)}}$中，我们用了一个 $\frac{1}{n}$ 的因子对整体代价函数进行了标定。有时候，人们会忽略这个 $\frac{1}{n}$ 因子，即对所有训练样例“求和”而不是“求平均”。这一点在训练样例总数不能提前确定的时候非常有用，比如当更多的训练数据在不断实时产生的时候就会发生这种情况。同样类似，公式$\color{lime}{\eqref{(20)}}$和$\color{lime}{\eqref{(21)}}$中的“组”更新规则，有时候也会忽略求和前面的$\frac{1}{m}$因子。从概念上说，两者几乎没什么不同，因为这等价于重新标定了学习率 $\eta$ 而已。不过当我们在仔细对比不同的研究工作时，需要对此留心一点。</p>
+<p>我们可以将随机梯度下降看做是某种类似于民意调查的过程：将梯度下降应用于一“小组”样例要比应用于全部样例要容易得多，就如同采样民意调查要比全民公投要容易得多。例如，在MNIST样例中，整个训练集的样本数 $n=60000$ 个，而比如说我们选定的“小组”样本数为$m=10$个。这意味着我们在估算梯度的时候会快$6000$倍！当然，估算结果不一定精确——因为有统计涨落的误差——不过，我们不需要它精确：因为我们关心的仅仅是这个过程是不是整体向着$C$减小的方向在走，而不是要严格计算出梯度值。实际上，随机梯度下降在训练神经网络的过程中是非常常见和有效的手段，也是本书将要演绎的许多训练技巧的基础。<br><strong>练习</strong><br>梯度下降的一种极端方式是使用大小为1的“小组”。也就是，给定一个训练输入$x$，我们按照规则$w_k \rightarrow w_k’ = w_k - \eta \partial C_x / \partial w_k$和$b_l \rightarrow b_l’ = b_l - \eta \partial C_x / \partial b_l$来更新权重和偏差。然后选择另外一个训练输入，再来更新权重和偏差。反复这样，这个过程被称为在线，在线或增量学习。在线学习中，神经网络每次从一个训练输入中进行学习（就像人一样）。请指出在线学习的优点和缺点，相对于具有“小组”大小为$20$的随机梯度下降算法。</p>
+<p>好，这一节的最后，我们来讨论一个对于刚刚接触梯度下降算法的人常有的困扰。在神经网络中，代价函数 $C$ 当然依赖于很多变量，即，所有的权重和偏移。因此，从某种意义上说，$C$ 定义了一个非常非常高维空间中的曲面。有些人可能会觉得；“嗯，我需要想象这些额外的维度”，然后开始担心：“我甚至连四维空间都没法想象，更别说五维或者五百万维了”。是不是这些人缺少了某种“真正的”超级数学家所具有的超能力？当然不是。即便是最牛哄哄的数学家也很难想象四维空间，如果可以的话。技巧在于这些数学家发展了一套描述问题的替代方法，而这正是我们刚才所做的：我们用一套代数形式的（而非直观的）算法来表征 $\Delta C$，从而进一步思考怎样让$C$不断减小。那些擅长思考高维空间的人，其实头脑中内建了一个“库”，这个“库”包含了许多类似于刚才描述的这些抽象方法。这些方法也许不像我们所熟知的三维空间那样简单直观，不过一旦你在头脑中也建立了这个“库”，你就可以驾轻就熟地“想象”高维空间了。这里我就不再深入讨论下去了，如果你对于数学家们怎样想象高维空间感兴趣的话，你可能会喜欢读<a href="https://mathoverflow.net/questions/25983/intuitive-crutches-for-higher-dimensional-thinking" target="_blank" rel="noopener">这篇讨论</a>。虽然其中讨论到的一些方法非常复杂，但主要的方法还是比较直观，也可以被大家掌握的。</p>
+<h3 id="1-8使用神经网络识别手写数字"><a href="#1-8使用神经网络识别手写数字" class="headerlink" title="1.8使用神经网络识别手写数字"></a>1.8使用神经网络识别手写数字</h3><p>好了，让我们使用随机梯度下降算法和MNIST训练数据来写一个能够学习识别手写数字的程序。首先我们需要获得MNIST数据。如果你是git的使用者，你可以通过克隆这本书的源代码库来获得这些数据,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/mnielsen/neural-networks-and-deep-learning.git</span><br></pre></td></tr></table></figure></p>
+<p>如果你不使用git，你可以通过<a href="https://github.com/mnielsen/neural-networks-and-deep-learning/archive/master.zip" target="_blank" rel="noopener">这里</a>下载所需的数据和源代码。<br>顺便说一下，早些时候我在描述MNIST数据时，我说过它被分成了两份，其中60000幅图片用于训练，另外10000幅用于测试。那是MNIST官方的陈述。事实上，我们将要使用的分法会有一点区别。用于测试的数据我们不会改动，但是60000幅用于训练的图片将被分成两部分：其中一份包括50000幅图片，将用于训练我们的神经网络，剩下的10000幅图片将作为验证集（validation set）。虽然我们在这一章不会用这个验证集，但是在这本书之后的部分我们会发现验证集对确定怎么设置神经网络的一些超参数(hyper－parameters)很有用，比如学习速率等，这些参数没有在我们的学习算法中直接选取。尽管验证集不是MNIST数据的原始规范，但是很多人都是用这种方式使用MNIST，验证集的使用在神经网络中非常普遍。从现在开始，当我说到“MNIST训练数据集”时，我指的是我们分出来的50000幅图片，而不是原来的60000幅图片集。<br>除去MNIST数据，我们还需要一个叫Numpy的Python函数库用于做快速线性代数运算。如果你还没有安装Numpy，你通过<code>pip install numpy</code>安装它。</p>
+<p>在给出完整的列表之前，下面让我先解释一下神经网络程序的核心特征。最重要的部分就是一个叫Network的类（class），它被用来表示一个神经网络。下面是用于初始化Network对象的代码:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Network</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, sizes)</span>:</span></span><br><span class="line">        self.num_layers = len(sizes)</span><br><span class="line">        self.sizes = sizes</span><br><span class="line">        self.biases = [np.random.randn(y, <span class="number">1</span>) <span class="keyword">for</span> y <span class="keyword">in</span> sizes[<span class="number">1</span>:]]</span><br><span class="line">        self.weights = [np.random.randn(y, x) </span><br><span class="line">                        <span class="keyword">for</span> x, y <span class="keyword">in</span> zip(sizes[:<span class="number">-1</span>], sizes[<span class="number">1</span>:])]</span><br></pre></td></tr></table></figure></p>
+<p>在这段代码中，列表sizes包含在对应层的神经元的个数。因此，比如说，如果我们想要构造一个Network对象，其中第一层有2个神经元，第二层有3个神经元，最后一层只有1个神经元，我们可以通过下面的代码做到些：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net = Network([<span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>])</span><br></pre></td></tr></table></figure></p>
+<p>Network对象中所有的偏移（biases）和权重（weights）都通过Numpy中的np.random.randn函数产生标准正态分布的随机数进行初始化。这个随机的初始化给了随机梯度下降算法一个起始点。在随后的章节中我们会找到更好的初始化的方法，但是现在会用这个方法。注意到Network初始化的代码假设了第一层神经元为输入层，并且没有对那些神经元设置偏移量，因为只有在计算之后层的输出时才用到偏移量。</p>
+<p>同时也要注意到，偏移量和权重系数被储存为Numpy矩阵的列表。因此，比如说net.weights[1] 就是一个Numpy矩阵，它储存着连接第2层和第3层神经元的权重系数。（注意不是第1层和第2层，因为python列表的索引指标是从0开始的。）因为net.weights[1]比较冗长，让我们用w表示这个矩阵。矩阵元$w_{jk}$就是连接第2层中第$k$个神经元和第3层中第$j$个神经元的权重系数。索引指标$j$和$k$这样的排序是不是看上去有点奇怪，交换$j$和$k$的顺序是不是看上去更合理？这样排序的最大的好处就是第三层的神经元的激活向量（vector of activations）可以直接写成：</p>
+<script type="math/tex; mode=display">
+    a'=\sigma (wa+b)
+    \tag{22}\label{(22)}</script><p>这个公式描述的过程有点多，因此让我们一点一点地来解开。$a$是第2层神经元的激活向量（vector of activations）。为了得到$a’$，我们先将$a$乘以权重矩阵$w$，然后加上偏移向量$b$，最后我们对向量$wa +b$中的每一个元使用函数$\sigma$。（这叫函数$\sigma$的向量化（vectorizing）。）很容验证，在计算sigmoid神经元的输出结果时，公式$\color{lime}{\eqref{(22)}}$给出的结果会和我们之前用公式$\color{lime}{\eqref{(4)}}$所说的方式给出的结果是一样的。<br><strong>练习</strong><br>将公式$\color{lime}{\eqref{(22)}}$写成向量元素的形式，验证在算sigmoid神经元的输出时，它给出的结果和公式$\color{lime}{\eqref{(4)}}$的结果是一样的。</p>
+<p>有了这些在心中，很容易写一段程序用于计算一个Network 对象的输出结果。我们从定义sigmoid函数开始：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid</span><span class="params">(z)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1.0</span>/(<span class="number">1.0</span>+np.exp(-z))</span><br></pre></td></tr></table></figure></p>
+<p>注意到，当输入量z是一个向量或者Numpy数组，Numpy自动地对向量的每一个元运用sigmoid函数。</p>
+<p>然后我们对Network类加一个feedforward方法。当一个输入量a给了network，这个方法就给出对应的输出<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">feedforward</span><span class="params">(self, a)</span>:</span></span><br><span class="line">    <span class="string">"""Return the output of the network if "a" is input."""</span></span><br><span class="line">    <span class="string">"""第一层输入，第n层输出"""</span></span><br><span class="line">    <span class="keyword">for</span> b, w <span class="keyword">in</span> zip(self.biases, self.weights):</span><br><span class="line">        a = sigmoid(np.dot(w, a)+b)</span><br><span class="line">    <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure></p>
+<p>当然，我们想让Network对象做的最主要的事情是学习。为了达到这个目的，我们要给它们一个SGD方法，用这个方法实现随机梯度下降算法。下面是代码。有几处地方有一点难以理解，但是我们会在给出代码后加以讲解。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SGD</span><span class="params">(self, training_data, epochs, mini_batch_size, eta,</span></span></span><br><span class="line"><span class="function"><span class="params">        test_data=None)</span>:</span></span><br><span class="line">    <span class="string">"""Train the neural network using mini-batch stochastic</span></span><br><span class="line"><span class="string">    gradient descent.  The "training_data" is a list of tuples</span></span><br><span class="line"><span class="string">    "(x, y)" representing the training inputs and the desired</span></span><br><span class="line"><span class="string">    outputs.  http://tensorfly.cn/home The other non-optional parameters are</span></span><br><span class="line"><span class="string">    self-explanatory.  If "test_data" is provided then the</span></span><br><span class="line"><span class="string">    network will be evaluated against the test data after each</span></span><br><span class="line"><span class="string">    epoch, and partial progress printed out.  This is useful for</span></span><br><span class="line"><span class="string">    tracking progress, but slows things down substantially."""</span></span><br><span class="line">    <span class="keyword">if</span> test_data: n_test = len(test_data)</span><br><span class="line">    n = len(training_data)</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> xrange(epochs):</span><br><span class="line">        random.shuffle(training_data)</span><br><span class="line">        mini_batches = [</span><br><span class="line">            training_data[k:k+mini_batch_size]</span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> xrange(<span class="number">0</span>, n, mini_batch_size)]</span><br><span class="line">        <span class="keyword">for</span> mini_batch <span class="keyword">in</span> mini_batches:</span><br><span class="line">            self.update_mini_batch(mini_batch, eta)</span><br><span class="line">        <span class="keyword">if</span> test_data:</span><br><span class="line">            <span class="keyword">print</span> <span class="string">"Epoch &#123;0&#125;: &#123;1&#125; / &#123;2&#125;"</span>.format(</span><br><span class="line">                j, self.evaluate(test_data), n_test)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">print</span> <span class="string">"Epoch &#123;0&#125; complete"</span>.format(j)</span><br></pre></td></tr></table></figure></p>
+<p>training_data是一个由(x, y)类型元组组成的列表，其中x表示训练数据的输入，y为对应的输出。变量epochs和mini_batch_size正如你所预期的一样,分别是训练的代数和取样时最小组的大小。eta是学习的速率，$\eta$。如果可选参量test_data被提供了，程序在每一个训练“代”（epoch）结束之后都会评估神经网络的表现，然后输出部分进展。这对跟踪进展有用，但是会大大减慢速度。<br><small>2018-09-13 21:42:47</small></p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>原文:<a href="http://neuralnetworksanddeeplearning.com/chap1.html" target="_blank" rel="noopener">http://neuralnetworksanddeeplearning.com/chap1.html</a></p>
 
       
@@ -804,7 +889,7 @@ C(w,b)\equiv \frac {1}{2n}\sum_x{||y(x)-a||}^2\tag{6}\label{(6)}</script><p>这�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用神经网络识别手写数字"><span class="nav-text">使用神经网络识别手写数字</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-第一章"><span class="nav-text">1.第一章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1感知器（Perceptrons）"><span class="nav-text">1.1感知器（Perceptrons）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2Sigmoid神经元（Sigmoid-neurons）"><span class="nav-text">1.2Sigmoid神经元（Sigmoid neurons）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3练习"><span class="nav-text">1.3练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4神经网络的体系结构"><span class="nav-text">1.4神经网络的体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5一个简单的网络来分类手写数字"><span class="nav-text">1.5一个简单的网络来分类手写数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6练习"><span class="nav-text">1.6练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7梯度下降学习算法"><span class="nav-text">1.7梯度下降学习算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用神经网络识别手写数字"><span class="nav-text">使用神经网络识别手写数字</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-第一章"><span class="nav-text">1.第一章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1感知器（Perceptrons）"><span class="nav-text">1.1感知器（Perceptrons）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2Sigmoid神经元（Sigmoid-neurons）"><span class="nav-text">1.2Sigmoid神经元（Sigmoid neurons）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3练习"><span class="nav-text">1.3练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4神经网络的体系结构"><span class="nav-text">1.4神经网络的体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5一个简单的网络来分类手写数字"><span class="nav-text">1.5一个简单的网络来分类手写数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6练习"><span class="nav-text">1.6练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7梯度下降学习算法"><span class="nav-text">1.7梯度下降学习算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8使用神经网络识别手写数字"><span class="nav-text">1.8使用神经网络识别手写数字</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -860,7 +945,7 @@ C(w,b)\equiv \frac {1}{2n}\sum_x{||y(x)-a||}^2\tag{6}\label{(6)}</script><p>这�
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="本站字数统计">28.1k</span>
+    <span title="本站字数统计">34.1k</span>
   
 
   
