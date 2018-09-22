@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[形式语言与自动机基础知识]]></title>
+    <url>%2F2018%2F09%2F22%2F%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[形式语言与自动机这门课需要有离散数学的基础，但本科通信工程里没有学过这门课，总结一些这门课中需要的基础知识 1.集合及其运算1.1子集和真子集$A$是$B$的子集：$A\subseteq B$或$B\supseteq A$$A$是$B$的真子集：$A\subset B$或$B\supset A$$x$是$A$的一个元素：$x\in A$$x$不是$A$的一个元素：$x\notin A$ 1.2集合的交并差补$A$和$B$的并集：$A\cup B=\{x|x\in A或x\in B\}$$A$和$B$的交集：$A\cap B=\{x|x\in A且x\in B\}$$A$和$B$的差集：$A - B=\{x|x\in A且x\notin B\}$若$B\subseteq A$我们也称$A - B$为$B$的（关于$A$）补,记作：$\overline B(A)$ 1.3集合的并的推广设$I$是某些标号的集合我们将$\displaystyle \bigcup_{i\in I}A_i=\{x|存在i\in I,使得x\in A_i\}$ 1.4A的幂集$A$的所有子集的集合，记作$2^A=\{B|B\subseteq A\}$ 1.5笛卡尔乘积$A\times B=\{(a,b)|a\in A且b\in B\}$ 1.6集合之间的关系由$A$到$B$的关系是$A\times B$的任何子集。若$A=B$，则称为$A$上的关系。若$R$为$A$到$B$的关系，当$(a,b)$在$R$内时，可写成$aRb$ 1.7集合关系的性质设$R$是集合$A$上的关系，则有（1）若对$A$中的任一元素$a$，都有$aRa$，则称$R$是自反的；（2）若对$A$中的任何元素$a,b$，从$aRb$能够推到出$bRa$，则称$R$是对称的；（3）若$a,b,c$是$A$中的元素，从$aRb$和$bRc$能够推出$aRc$，则称$R$是传递的；若关系$R$同时是自反的，对称的和传递的，则称之为等价关系。2018-09-22 15:28:12 参考资料1.《形式语言与自动机》陈有祺编著]]></content>
+      <categories>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[梯度旋度和散度]]></title>
     <url>%2F2018%2F09%2F08%2F%E6%A2%AF%E5%BA%A6%E6%97%8B%E5%BA%A6%E5%92%8C%E6%95%A3%E5%BA%A6%2F</url>
     <content type="text"><![CDATA[有关梯度旋度和散度的定义和计算只做记录,不解释 1.定义1.1梯度设函数$u=f(x,y,z)$在空间区域$G$内具有一阶连续偏导数,其中点$P(x,y,z) \in G$向量 \left\{ \frac {\partial f}{\partial x}, \frac {\partial f}{\partial y}, \frac {\partial f}{\partial z} \right\}= \frac {\partial f}{\partial x}\vec i+ \frac {\partial f}{\partial y}\vec j+ \frac {\partial f}{\partial z}\vec k为函数$u=f(x,y,z)$在点$P(x,y,z)$的梯度记为$grad\;f(x,y,z)$或$\nabla f(x,y,z)$(注:$\nabla = \frac {\partial}{\partial x}\vec i+\frac {\partial}{\partial y}\vec j+\frac {\partial}{\partial z}\vec k$称为三维的向量微分算子) 1.2旋度在三维空间$G$中有三维直角坐标系$O_{xyz}$,设向量场: \vec v=v_x\vec i+v_y\vec j+v_z\vec k其中$v_x,v_y,v_z$具有一阶连续偏导数,点$P(x,y,z) \in G$向量 \begin{vmatrix} \vec i & \vec j & \vec k \\ \frac {\partial}{\partial x} & \frac {\partial}{\partial y} & \frac {\partial}{\partial z} \\ v_x & v_y & v_z \\ \end{vmatrix} = (\frac {\partial v_z}{\partial y} - \frac {\partial v_y}{\partial z})\vec i+ (\frac {\partial v_x}{\partial z} - \frac {\partial v_z}{\partial x})\vec j+ (\frac {\partial v_y}{\partial x} - \frac {\partial v_x}{\partial y})\vec k为向量场$\vec v$在点$P(x,y,z)$的旋度记为$curl\;v$或者$\nabla \times v$ 1.3散度在三维空间$G$中有三维直角坐标系$O_{xyz}$,设向量场: \vec v=v_x\vec i+v_y\vec j+v_z\vec k其中$v_x,v_y,v_z$具有一阶连续偏导数,点$P(x,y,z) \in G$标量 \frac {\partial v_x}{\partial x}+ \frac {\partial v_y}{\partial y}+ \frac {\partial v_z}{\partial z}为向量场$\vec v$在点$P(x,y,z)$的散度记为$div\;v$或者$\nabla \cdot v$2018-09-08 15:26:31]]></content>
