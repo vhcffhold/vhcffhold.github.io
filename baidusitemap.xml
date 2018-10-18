@@ -3,6 +3,28 @@
 
 
     
+  <url>
+    <loc>http://www.vhcffh.com/2018/10/18/windows%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2018-10-18T12:44:53.900Z</lastmod>
+    <data>
+        <display>
+        <title>socket网络编程</title>
+        <pubTime>2018-10-18T12:39:40.000Z</pubTime>
+        
+        <tag>C语言</tag>
+         
+        <tag>socket</tag>
+         
+         
+           
+             
+              <breadCrumb title="C/C++" url="http://www.vhcffh.com/categories/C-C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
@@ -630,9 +652,9 @@
         <title>powershell脚本遍历目录</title>
         <pubTime>2017-09-01T14:36:51.000Z</pubTime>
         
-        <tag>powershell</tag>
-         
         <tag>windows</tag>
+         
+        <tag>powershell</tag>
          
          
            
@@ -742,9 +764,9 @@
         <title>powershell卸载自带应用</title>
         <pubTime>2017-09-01T14:24:44.000Z</pubTime>
         
-        <tag>powershell</tag>
-         
         <tag>windows</tag>
+         
+        <tag>powershell</tag>
          
          
            
@@ -786,6 +808,10 @@
         <title>搬瓦工VPS搭建Web服务器</title>
         <pubTime>2017-08-04T03:40:29.000Z</pubTime>
         
+        <tag>centos</tag>
+         
+        <tag>搬瓦工</tag>
+         
         <tag>apache</tag>
          
         <tag>php</tag>
@@ -795,10 +821,6 @@
         <tag>web</tag>
          
         <tag>服务器</tag>
-         
-        <tag>centos</tag>
-         
-        <tag>搬瓦工</tag>
          
          
            

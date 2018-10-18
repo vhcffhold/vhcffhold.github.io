@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[socket网络编程]]></title>
+    <url>%2F2018%2F10%2F18%2Fwindows%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[socket网络编程int inet_aton(const char *cp, struct in_addr *inp);转换网络主机地址为二进制数值并存储与第二个参数中函数返回0表示主机地址无效，非0表示主机地址有效转化完后需要调用htons或htonl函数才能将主机字节序转换为网络字节序用于网络传输 char *inet_ntoa(struct in_addr in);转换网络字节序为标准的ASCII以点分开的地址，函数返回字符串指针该字符串空间为静态分配，第二次调用时会覆盖第一次的内容 in_addr_t inet_addr(const char *cp);转换网络主机地址为网络字节序二进制值参数无效，返回-1(INADDR_NONE)注意：转换255.255.255.255时也返回-1 int inet_pton(int af, const char *src, void *dst);转换字符串到网络地址，af是地址簇，src是来源地址， dst接收转换后的数据。 const char *inet_ntop(int af, const void *src, char *dst, socklen_t cnt);转换网络字节序二进制值到ASCII类型的地址，参数的作用和inet_pton相同，socklen_t cnt指所指向缓存区dst的大小，避免溢出，如果缓存区太小无法存储地址的值，则返回一个空指针，并将errno置为ENOSPC。 int select(int maxfdp,fd_set *readfds,fd_set *writefds,fd_set *errorfds,struct timeval*timeout);int maxfdp 指集合中所有文件描述符的范围，即所有文件描述符的最大值加1，不能错！在Windows中这个参数的值无所谓，可以设置不正确。struct fd_set 可以理解为一个集合，这个集合中存放的是文件描述符(filedescriptor)，即文件句柄。监视这些文件描述符的读变化 int setsockopt(SOCKET s,int level,int optname,const char* optval,int optlen);s(套接字): 指向一个打开的套接口描述字level:(级别)： 指定选项代码的类型。 SOL_SOCKET: 基本套接口 IPPROTO_IP: IPv4套接口 IPPROTO_IPV6: IPv6套接口 IPPROTO_TCP: TCP套接口optname(选项名)： 选项名称optval(选项值): 是一个指向变量的指针 类型：整形，套接口结构， 其他结构类型:linger{}, timeval{ }optlen(选项长度) ：optval 的大小 int PASCAL FAR recvfrom( SOCKET s, char FAR* buf, int len, int flags,struct sockaddr FAR* from, int FAR* fromlen);s：标识一个已连接套接口的描述字。buf：接收数据缓冲区。len：缓冲区长度。flags：调用操作方式。from：（可选）指针，指向装有源地址的缓冲区。fromlen：（可选）指针，指向from缓冲区长度值。 参考资料1.https://blog.csdn.net/zyy617532750/article/details/585957002.https://www.cnblogs.com/zhoudingcocng/p/6209961.html]]></content>
+      <categories>
+        <category>C/C++</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+        <tag>socket</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[形式语言与自动机基础知识]]></title>
     <url>%2F2018%2F09%2F22%2F%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
     <content type="text"><![CDATA[形式语言与自动机这门课需要有离散数学的基础，但本科通信工程里没有学过这门课，总结一些这门课中需要的基础知识 1.集合及其运算1.1子集和真子集$A$是$B$的子集：$A\subseteq B$或$B\supseteq A$$A$是$B$的真子集：$A\subset B$或$B\supset A$$x$是$A$的一个元素：$x\in A$$x$不是$A$的一个元素：$x\notin A$ 1.2集合的交并差补$A$和$B$的并集：$A\cup B=\{x|x\in A或x\in B\}$$A$和$B$的交集：$A\cap B=\{x|x\in A且x\in B\}$$A$和$B$的差集：$A - B=\{x|x\in A且x\notin B\}$若$B\subseteq A$我们也称$A - B$为$B$的（关于$A$）补,记作：$\overline B(A)$ 1.3集合的并的推广设$I$是某些标号的集合我们将$\displaystyle \bigcup_{i\in I}A_i=\{x|存在i\in I,使得x\in A_i\}$ 1.4A的幂集$A$的所有子集的集合，记作$2^A=\{B|B\subseteq A\}$ 1.5笛卡尔乘积$A\times B=\{(a,b)|a\in A且b\in B\}$ 1.6集合之间的关系由$A$到$B$的关系是$A\times B$的任何子集。若$A=B$，则称为$A$上的关系。若$R$为$A$到$B$的关系，当$(a,b)$在$R$内时，可写成$aRb$ 1.7集合关系的性质设$R$是集合$A$上的关系，则有（1）若对$A$中的任一元素$a$，都有$aRa$，则称$R$是自反的；（2）若对$A$中的任何元素$a,b$，从$aRb$能够推到出$bRa$，则称$R$是对称的；（3）若$a,b,c$是$A$中的元素，从$aRb$和$bRc$能够推出$aRc$，则称$R$是传递的；若关系$R$同时是自反的，对称的和传递的，则称之为等价关系。2018-09-22 15:28:12 参考资料1.《形式语言与自动机》陈有祺编著]]></content>
@@ -287,8 +299,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>powershell</tag>
         <tag>windows</tag>
+        <tag>powershell</tag>
       </tags>
   </entry>
   <entry>
@@ -299,8 +311,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>powershell</tag>
         <tag>windows</tag>
+        <tag>powershell</tag>
       </tags>
   </entry>
   <entry>
@@ -384,13 +396,13 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>centos</tag>
+        <tag>搬瓦工</tag>
         <tag>apache</tag>
         <tag>php</tag>
         <tag>mysql</tag>
         <tag>web</tag>
         <tag>服务器</tag>
-        <tag>centos</tag>
-        <tag>搬瓦工</tag>
       </tags>
   </entry>
   <entry>
