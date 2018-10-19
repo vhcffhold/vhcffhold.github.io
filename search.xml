@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[简单的iptables配置过程]]></title>
+    <url>%2F2018%2F10%2F19%2F%E7%AE%80%E5%8D%95%E7%9A%84iptables%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[简单的记一下iptables的配置过程，以后用到了就不用再google了总的来说分为四步，清楚规则，预设规则，添加自定义规则，保存规则 iptables配置过程1.清除规则:清楚旧的规则iptables -F 清除预设表filter中的所有规则链的规则iptables -X 清除预设表filter中使用者自定链中的规则2.设定预设规则默认情况下对各种包的处理方式iptables -p INPUT DROPiptables -p OUTPUT ACCEPTiptables -p FORWARD DROP3.添加用户自定义规则对于特定端口协议的包的规则进行设置iptables -A INPUT -p tcp —dport 22 -j ACCEPT-A:表示添加规则到INPUT(OUTPUT,FORWARD)链-p:表示tcp(udp)协议—dport(—sport):目的端口号(源端口号)-j():添加规则为接受4.保存规则不保存的话重启后就没有了service iptables save 参考资料1.http://www.cnblogs.com/JemBai/archive/2009/03/19/1416364.html]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>服务器</tag>
+        <tag>系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[socket网络编程]]></title>
     <url>%2F2018%2F10%2F18%2Fwindows%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[socket网络编程int inet_aton(const char *cp, struct in_addr *inp);转换网络主机地址为二进制数值并存储与第二个参数中函数返回0表示主机地址无效，非0表示主机地址有效转化完后需要调用htons或htonl函数才能将主机字节序转换为网络字节序用于网络传输 char *inet_ntoa(struct in_addr in);转换网络字节序为标准的ASCII以点分开的地址，函数返回字符串指针该字符串空间为静态分配，第二次调用时会覆盖第一次的内容 in_addr_t inet_addr(const char *cp);转换网络主机地址为网络字节序二进制值参数无效，返回-1(INADDR_NONE)注意：转换255.255.255.255时也返回-1 int inet_pton(int af, const char *src, void *dst);转换字符串到网络地址，af是地址簇，src是来源地址， dst接收转换后的数据。 const char *inet_ntop(int af, const void *src, char *dst, socklen_t cnt);转换网络字节序二进制值到ASCII类型的地址，参数的作用和inet_pton相同，socklen_t cnt指所指向缓存区dst的大小，避免溢出，如果缓存区太小无法存储地址的值，则返回一个空指针，并将errno置为ENOSPC。 int select(int maxfdp,fd_set *readfds,fd_set *writefds,fd_set *errorfds,struct timeval*timeout);int maxfdp 指集合中所有文件描述符的范围，即所有文件描述符的最大值加1，不能错！在Windows中这个参数的值无所谓，可以设置不正确。struct fd_set 可以理解为一个集合，这个集合中存放的是文件描述符(filedescriptor)，即文件句柄。监视这些文件描述符的读变化 int setsockopt(SOCKET s,int level,int optname,const char* optval,int optlen);s(套接字): 指向一个打开的套接口描述字level:(级别)： 指定选项代码的类型。 SOL_SOCKET: 基本套接口 IPPROTO_IP: IPv4套接口 IPPROTO_IPV6: IPv6套接口 IPPROTO_TCP: TCP套接口optname(选项名)： 选项名称optval(选项值): 是一个指向变量的指针 类型：整形，套接口结构， 其他结构类型:linger{}, timeval{ }optlen(选项长度) ：optval 的大小 int PASCAL FAR recvfrom( SOCKET s, char FAR* buf, int len, int flags,struct sockaddr FAR* from, int FAR* fromlen);s：标识一个已连接套接口的描述字。buf：接收数据缓冲区。len：缓冲区长度。flags：调用操作方式。from：（可选）指针，指向装有源地址的缓冲区。fromlen：（可选）指针，指向from缓冲区长度值。 参考资料1.https://blog.csdn.net/zyy617532750/article/details/585957002.https://www.cnblogs.com/zhoudingcocng/p/6209961.html]]></content>

@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="centos,搬瓦工,apache,php,mysql,web,服务器," />
+  <meta name="keywords" content="服务器,系统," />
 
 
 
@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="在centos上安装apache+php+mysql的过程">
-<meta name="keywords" content="centos,搬瓦工,apache,php,mysql,web,服务器">
+<meta name="description" content="简单的记一下iptables的配置过程，以后用到了就不用再google了总的来说分为四步，清楚规则，预设规则，添加自定义规则，保存规则">
+<meta name="keywords" content="服务器,系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搬瓦工VPS搭建Web服务器">
-<meta property="og:url" content="http://www.vhcffh.com/2017/08/04/搬瓦工VPS搭建Web服务器/index.html">
+<meta property="og:title" content="简单的iptables配置过程">
+<meta property="og:url" content="http://www.vhcffh.com/2018/10/19/简单的iptables配置过程/index.html">
 <meta property="og:site_name" content="昔日风">
-<meta property="og:description" content="在centos上安装apache+php+mysql的过程">
+<meta property="og:description" content="简单的记一下iptables的配置过程，以后用到了就不用再google了总的来说分为四步，清楚规则，预设规则，添加自定义规则，保存规则">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-14T05:36:05.869Z">
+<meta property="og:updated_time" content="2018-10-19T14:14:37.579Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搬瓦工VPS搭建Web服务器">
-<meta name="twitter:description" content="在centos上安装apache+php+mysql的过程">
+<meta name="twitter:title" content="简单的iptables配置过程">
+<meta name="twitter:description" content="简单的记一下iptables的配置过程，以后用到了就不用再google了总的来说分为四步，清楚规则，预设规则，添加自定义规则，保存规则">
 
 
 
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="http://www.vhcffh.com/2017/08/04/搬瓦工VPS搭建Web服务器/"/>
+  <link rel="canonical" href="http://www.vhcffh.com/2018/10/19/简单的iptables配置过程/"/>
 
 
 
@@ -135,7 +135,7 @@
 </script>
 
 
-  <title>搬瓦工VPS搭建Web服务器 | 昔日风</title>
+  <title>简单的iptables配置过程 | 昔日风</title>
   
 
 
@@ -335,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.vhcffh.com/2017/08/04/搬瓦工VPS搭建Web服务器/">
+    <link itemprop="mainEntityOfPage" href="http://www.vhcffh.com/2018/10/19/简单的iptables配置过程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Frey">
@@ -352,7 +352,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">搬瓦工VPS搭建Web服务器</h2>
+          <h2 class="post-title" itemprop="name headline">简单的iptables配置过程</h2>
         
 
         <div class="post-meta">
@@ -364,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-04T11:40:29+08:00">
-                2017-08-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-19T22:00:41+08:00">
+                2018-10-19
               </time>
             
 
@@ -404,7 +404,7 @@
 
           
           
-             <span id="/2017/08/04/搬瓦工VPS搭建Web服务器/" class="leancloud_visitors" data-flag-title="搬瓦工VPS搭建Web服务器">
+             <span id="/2018/10/19/简单的iptables配置过程/" class="leancloud_visitors" data-flag-title="简单的iptables配置过程">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -427,7 +427,7 @@
                 </span>
                 
                 <span title="字数统计">
-                  383
+                  246
                 </span>
               
 
@@ -441,7 +441,7 @@
                 </span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -462,22 +462,9 @@
       
 
       
-        <p>在centos上安装apache+php+mysql的过程<br><a id="more"></a><br>搬瓦工VPS<a href="https://bandwagonhost.com/aff.php?aff=17697" target="_blank" rel="noopener">购买地址</a></p>
-<h1 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache"></a>安装apache</h1><p>安装<code>yum install httpd</code></p>
-<p>启动<code>service httpd start</code><br>暂停<code>service httpd stop</code><br>重启<code>service httpd restart</code></p>
-<p>检查开机启动情况<code>chkconfig --list httpd</code><br>默认情况下是全部关闭的，尽量设置开机启动，以防主机意外关机</p>
-<p>设置开机启动命令<code>chkconfig httpd on</code><br>再次检查启动情况，看到2，3，4，5为启动<br>关闭开机启动命令<code>chkconfig httpd off</code></p>
-<p>到此Apache安装完成，在自己浏览器中输入主机IP和端口号能正常打开</p>
-<h1 id="安装php"><a href="#安装php" class="headerlink" title="安装php"></a>安装php</h1><p>命令为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install php</span><br><span class="line">yum install php-mysql  php-gd  php-imap  php-ldap  php-odbc php-pear  php-xml  php-xmlrpc</span><br><span class="line">yum install php-mysql</span><br></pre></td></tr></table></figure></p>
-<p>以上命令为安装php及其支持的组件</p>
-<h1 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>首先查看主机是否已经安装<code>rpm -qa|grep mysql</code></p>
-<p>注意：可能检查中安装有php-mysql XXXXX 和 mysql-libXXXX,这是刚刚第二步安装的php的组件,不必理会</p>
-<p>已经安装的话就执行删除命令<code>rmp -e mysql</code></p>
-<p>然后继续安装<br>使用命令<code>yum list | grep mysql</code><br>来查看yum上提供的mysql数据库可下载的版本</p>
-<p>安装命令<code>yum install -y mysql-server mysql mysql-devel</code><br>等待一段时间安装成功</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>接下来是对mysql的配置(<font color="red">注意:命令中是”mysqld”,不是mysql</font>)</p>
-<p>初始化:<code>service mysqld start</code><br>重启:<code>service mysqld restart</code><br>配置开机自动启动:<code>chkconfig mysqld on</code></p>
-<p>为mysql的root账户设置密码:<code>mysqladmin -u root password &#39;*********&#39;</code><br>登录命令<code>mysql -u root -p</code></p>
+        <p>简单的记一下iptables的配置过程，以后用到了就不用再google了<br>总的来说分为四步，清楚规则，预设规则，添加自定义规则，保存规则<br><a id="more"></a></p>
+<h1 id="iptables配置过程"><a href="#iptables配置过程" class="headerlink" title="iptables配置过程"></a>iptables配置过程</h1><p>1.清除规则:<br>清楚旧的规则<br>iptables -F        清除预设表filter中的所有规则链的规则<br>iptables -X        清除预设表filter中使用者自定链中的规则<br>2.设定预设规则<br>默认情况下对各种包的处理方式<br>iptables -p INPUT DROP<br>iptables -p OUTPUT ACCEPT<br>iptables -p FORWARD DROP<br>3.添加用户自定义规则<br>对于特定端口协议的包的规则进行设置<br>iptables -A INPUT -p tcp —dport 22 -j ACCEPT<br>-A:表示添加规则到INPUT(OUTPUT,FORWARD)链<br>-p:表示tcp(udp)协议<br>—dport(—sport):目的端口号(源端口号)<br>-j():添加规则为接受<br>4.保存规则<br>不保存的话重启后就没有了<br>service iptables save</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>1.<a href="http://www.cnblogs.com/JemBai/archive/2009/03/19/1416364.html" target="_blank" rel="noopener">http://www.cnblogs.com/JemBai/archive/2009/03/19/1416364.html</a></p>
 
       
     </div>
@@ -532,19 +519,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/centos/" rel="tag"># centos</a>
-          
-            <a href="/tags/搬瓦工/" rel="tag"># 搬瓦工</a>
-          
-            <a href="/tags/apache/" rel="tag"># apache</a>
-          
-            <a href="/tags/php/" rel="tag"># php</a>
-          
-            <a href="/tags/mysql/" rel="tag"># mysql</a>
-          
-            <a href="/tags/web/" rel="tag"># web</a>
-          
             <a href="/tags/服务器/" rel="tag"># 服务器</a>
+          
+            <a href="/tags/系统/" rel="tag"># 系统</a>
           
         </div>
       
@@ -557,8 +534,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/03/Python2与Python3共存/" rel="next" title="Python2与Python3共存">
-                <i class="fa fa-chevron-left"></i> Python2与Python3共存
+              <a href="/2018/10/18/windows网络编程/" rel="next" title="socket网络编程">
+                <i class="fa fa-chevron-left"></i> socket网络编程
               </a>
             
           </div>
@@ -566,10 +543,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/09/PyQt5/" rel="prev" title="PyQt5">
-                PyQt5 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -727,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装apache"><span class="nav-text">安装apache</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装php"><span class="nav-text">安装php</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装mysql"><span class="nav-text">安装mysql</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-text">配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#iptables配置过程"><span class="nav-text">iptables配置过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
